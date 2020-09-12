@@ -2594,13 +2594,13 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background-color: #1f1815;
+		background-color: #ffffff;
 		background-attachment: scroll ,								scroll;
 		background-image: url("../../images/index.png"), url("../../images/bg.jpg");
 		background-position: top left ,							bottom left;
 		background-repeat: no-repeat ,							no-repeat;
-		background-size: 10% ,								100%;
-		color: #ffffff;
+		background-size: 10% ,								150%;
+		color: #000000;
 		height: 100%;
 		left: 0;
 		padding: 8em 4em;
