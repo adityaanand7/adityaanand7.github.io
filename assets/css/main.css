@@ -2143,10 +2143,11 @@ input, select, textarea {
 			}
 
 			.image.avatar img {
-				border-radius: 200%;
+				border-radius: -100%;
 				width: 200%;
 				margin-left: -60px;
 			}
+			
 
 /* List */
 
@@ -2626,11 +2627,11 @@ input, select, textarea {
 		}
 
 		#header strong, #header b {
-			color: #7FFFD4;
+			color: #000000;
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #1E90FF;
+			color: #000000;
 		}
 
 		#header h1 {
