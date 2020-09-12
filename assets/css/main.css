@@ -82,7 +82,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #fff;
+		background: #DCDCDC;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2594,12 +2594,12 @@ input, select, textarea {
 		-ms-justify-content: space-between;
 		justify-content: space-between;
 		background-color: #1f1815;
-		background-attachment: scroll,								scroll;
-		background-image: url("images/.png"), url("../../images/bg.jpg");
-		background-position: top left,							top left;
-		background-repeat: repeat,								no-repeat;
-		background-size: auto,								150%;
-		color: rgba(255, 255, 255, 0.5);
+		background-attachment: scroll ,								scroll;
+		background-image: url("../../images/index.png"), url("../../images/bg.jpg");
+		background-position: top left ,							bottom left;
+		background-repeat: no-repeat ,							no-repeat;
+		background-size: 10% ,								150%;
+		color: #ffffff;
 		height: 100%;
 		left: 0;
 		padding: 8em 4em;
@@ -2626,22 +2626,22 @@ input, select, textarea {
 		}
 
 		#header strong, #header b {
-			color: #ffffff;
+			color: #7FFFD4;
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #ffffff;
+			color: #1E90FF;
 		}
 
 		#header h1 {
-			color: rgba(255, 255, 255, 0.5);
+			color: #1E90FF;
 			font-size: 1.35em;
 			line-height: 1.75em;
 			margin: 0;
 		}
 
 		#header .image.avatar {
-			margin: 0 0 1em 0;
+			margin: 0 0 5.5em 0;
 			width: 6.25em;
 		}
 
