@@ -2628,10 +2628,12 @@ input, select, textarea {
 
 		#header strong, #header b {
 			color: #000000;
+			font-weight: 1000;
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
 			color: #000000;
+			font-weight: 1000;
 		}
 
 		#header h1 {
