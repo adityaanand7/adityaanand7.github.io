@@ -2594,7 +2594,7 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background-color: #ffffff;
+		background-color: #000000;
 		background-attachment: scroll ,								scroll;
 		background-image: url("../../images/index.png"), url("../../images/bg.jpg");
 		background-position: top left ,							bottom left;
@@ -2627,12 +2627,12 @@ input, select, textarea {
 		}
 
 		#header strong, #header b {
-			color: #000000;
+			color: #ffffff;
 			font-weight: 1000;
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #000000;
+			color: #ffffff;
 			font-weight: 1000;
 		}
 
