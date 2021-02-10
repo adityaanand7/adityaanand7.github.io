@@ -6,6 +6,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+	
+	<style>			
+		/* Style tab links */
+		.tablink {
+		  background-color: #ddd;
+		  color: black;
+		  float: left;
+		  border: none;
+		  outline: none;
+		  cursor: pointer;
+		  padding: 14px 16px;
+		  font-size: 17px;
+		  width: 25%;
+		}
+
+		.tablink:hover {
+		  background-color: #777;
+		}
+
+		/* Style the tab content (and add height:100% for full page content) */
+		.tabcontent {
+		  color: black;
+		  display: none;
+		  padding: 100px 20px;
+		  height: 100%;
+		}
+
+	</style>
+
+
 	<body class="is-preload">
 
 		<!-- Header -->
@@ -20,91 +50,147 @@
 
 		<!-- Main -->
 			<div id="main">
+						<div class="tab">
+							  <button class="tablink" onclick="openPage('About Me' , this)" id="defaultOpen">About Me</button>
+							  <button class="tablink" onclick="openPage('Reseach Area' , this)">Reseach Area</button>
+							  <button class="tablink" onclick="openPage('Acedemic Background', this)">Acedemic Background</button>
+							  <button class="tablink" onclick="openPage('Courses', this)">Courses</button>
+							  <button class="tablink" onclick="openPage('Acedemic Experience', this)">Acedemic Experience</button>
+							  <button class="tablink" onclick="openPage('Awards and Achievements', this)">Awards and Achievements</button>
+							  <button class="tablink" onclick="openPage('Publications', this)">Publications</button>
+							  <button class="tablink" onclick="openPage( 'Contact Me', this)">Contact Me</button>
+						 </div>
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<b><h2>About Me</h2></b>
-						</header>
-						<p>Hi, I am 1st year MS Scholar in School of Computing & Electrical Engineering in Computer Science programme at IIT Mandi. I am intrested in the area of Compilers and programming languages.I am working under the guidance of  <a href ="https://manas.gitlab.io/">Dr. Manas Thakur </a>.</p>
-					</section>
+						<div id="About Me" class="tabcontent">
+							<section id="one">
+								<br>
+								<p>Hello! I am 1st year MS Research Scholar in <a href ="https://iitmandi.ac.in/Schools/SCEE/index.php">School of Computing & Electrical Engineering</a> in Computer Science programme at IIT Mandi. My Research interests lie primarily in the area of Compilers and programming languages. I am working under the guidance of  <a href ="https://manas.gitlab.io/">Dr. Manas Thakur </a>.</p>
+							</section>
+						</div>
 
-				<!-- Two -->
-					<section id="two">
-						<header class="major">
-							<h2>Reseach Area</h2>
-						</header>
-						<p> 1. Compiler Optimizations<br>
-						 2. Programming Languages<br> </p>	
-					</section>
-					
-				<!-- Three -->	
-				<section id="three>
-						<header class="major">
-							<h2>Acedemic Background:</h2>
-						</header>
-				<p>
+						<div id="Reseach Area" class="tabcontent">
+							<section id="two">
+								<br>
+								<p> 
+									<br>
+									1. Compiler Optimizations<br><br>
+								 	2. Programming Languages<br><br>
+								 	3. Program Analysis<br> <br>
+								</p>	
+							</section> 
+						</div>
 
-							1. MS (Research) School of Computing & Electrical Engineering ,Indian Institute of Technology Mandi (2022) <br>
+						<div id="Acedemic Background" class="tabcontent">
+							<section id="three">
+								<br>
+								1. MS (Research) School of Computing & Electrical Engineering ,<a href ="http://iitmandi.ac.in">Indian Institute of Technology Mandi</a> <br><br>
 
-							2. M.Tech. National Institute of Technology Hamirpur (2020) -->Discontinued <br>
+								2. M.Tech. <a href ="https://nith.ac.in/">National Institute of Technology Hamirpur</a> (2020) -->Discontinued <br><br>
 
-							3. B.E.  Visvesvaraya Technological University Belagavi, Karnataka (2019) <br>
-							
-							4. 12th Kendriya Vidyalaya Muzaffarpur, Bihar (2015)
+								3. B.E. <a href ="https://vtu.ac.in/">Visvesvaraya Technological University Belagavi</a>, Karnataka (2019) <br><br>
+								
+								4. 12th <a href ="https://muzzaffarpur.kvs.ac.in/">Kendriya Vidyalaya Muzaffarpur</a>, Bihar (2015)
 
-						</section>
-				<!-- Four -->
-				<section id="three>
-						<header class="major">
-							<h2>Acedemic Experience : </h2>
-						</header>
-						<p>	1. Teaching Assistant (Computer networks) National Institute of Technology Hamirpur, Spring 2020 <br>
-							2. Teaching Assistant (Object Oriented Programming) National Institute of Technology Hamirpur, Fall 2019 </p>
-					</section>				
-					
-				<!-- Five -->
-				<section id="three>
-						<header class="major">
-							<h2>Awards and Achievements:</h2>
-						</header>
-						<p>
-							1. Department Rank 1st (M.Tech.) (till 2nd Sem) in Department of Computer Science ,NIT Hamirpur  (2020) <br>
-							2. Overall 4th Rank (B.E) in Department of Computer Science , V.T.U. Belagavi Karnataka (2019) <br>
-							3. Technical Quiz Winner in Inter College Competition. (2018)<br>
-							4. Rajaya Puraskar holder in Bharat Scouts and Guides (2013) </p>
-				</section>
-				<!-- Six -->
-					<section id="three">
+							</section>
+						</div>
+
+						<div id="Courses" class="tabcontent">
+							<section id="four">
+								<br>
+								<b> &#9679; (CS507)Computer Architecture  </b> <br>
+									<p>&ensp;Offered by: <a href ="http://faculty.iitmandi.ac.in/~amit/"> Dr. Amit Kumar Singha </a>(Feb-21 to Jun-21) </P>
+								<b> &#9679; (CS611)Program Analysis  </b> <br>
+									<p> &ensp;Offered by: <a href ="https://manas.gitlab.io/"> Dr. Manas Thakur </a>(Feb-21 to Jun-21) 
+									Details available at the :  <a href = "https://manas.gitlab.io/courses/pa/spring21/"> Course Details</a></p>
+								<b> &#9679; (CS523)Verification of Reactive System  </b> <br>
+									<p>&ensp;Offered by: <a href ="http://faculty.iitmandi.ac.in/~astrid/"> Dr. Astrid Kiehn </a> (Sep-20 to Dec-20) </P>
+								<b> &#9679; (CS592)Reactive Design Pattern  </b> <br>
+									<p>&ensp;Offered by: <a href ="http://faculty.iitmandi.ac.in/~tag/">Dr. Timothy A Gonsalves </a>& <a href ="https://manas.gitlab.io/">Dr. Manas Thakur </a> (Sep-20 to Dec-20) </P>
+								<b> &#9679; (CS502)Compiler Design  </b> <br>
+									<p>&ensp;Offered by: <a href ="https://manas.gitlab.io/">Dr. Manas Thakur</a> (Sep-20 to Dec-20)
+									 Details available at the :  <a href = "https://manas.gitlab.io/courses/compilers/fall20/"> Course Details</a> </p>
+								<b> &#9679; (RM600)Research Methodology  </b> <br>
+									<p>&ensp;Compulsory course for all research scholars (Sep-20 to Dec-20) </p>	
+
+							</section>
+						</div>
+						<div id="Acedemic Experience" class="tabcontent">
+							<section id="five">
+								<br>
+								<p>	
+									<br>
+									1. Teaching Assistant  <a href = "https://manas.gitlab.io/courses/pop/spring21/">(CS302: Paradigms of Programming)</a> Indian Instiute of Technology Mandi,Spring 2021 <br><br>
+									2. Teaching Assistant (Computer networks) National Institute of Technology Hamirpur, Spring 2020 <br><br>
+									3. Teaching Assistant (Object Oriented Programming) National Institute of Technology Hamirpur, Fall 2019 </p>
+							</section>	
+						</div>
+
+						<div id="Awards and Achievements" class="tabcontent">
+							<section id="six">
+								<br>
+								<p>
+									<br>
+									1. Department Rank 1st (M.Tech.) (till 2nd Sem) in Department of Computer Science ,NIT Hamirpur  (2020) <br><br>
+									2. Overall 4th Rank (B.E) in Department of Computer Science , V.T.U. Belagavi Karnataka (2019) <br><br>
+									3. Technical Quiz Winner in Inter College Competition. (2018)<br><br>
+									4. Rajaya Puraskar holder in Bharat Scouts and Guides (2013) </p>
+							</section>
+						</div>
+						
+						<div id="Publications" class="tabcontent">
+						  <section id="seven">
+						  <br>
+						  <p>--------------------------------------------------------COMING SOON------------------------------------------------------------------</p>
+						</div>
+						
+						<div id="Contact Me" class="tabcontent">
+							<section id="eight">
 					
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">
 									<li>
 										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										---<br />
-										Indian Institute of Technology Mandi, HP<br />
-										India
-									</li>
-									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-										8553052758
+										<br>
+										(North Campus)<br />
+										Indian Institute of Technology Mandi<br />
+										Himachal Pradesh, India
 									</li>
 									<li>
 										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
 										<a href="#">adityaanand446@gmail.com</a>
 									</li>
 								</ul>
+								</div>
 							</div>
+							</section>
 						</div>
-					</section
+
+
+
+						<script>
+						function openPage(pageName,elmnt,color) {
+						  var i, tabcontent, tablinks;
+						  tabcontent = document.getElementsByClassName("tabcontent");
+						  for (i = 0; i < tabcontent.length; i++) {
+						    tabcontent[i].style.display = "none";
+						  }
+						  tablinks = document.getElementsByClassName("tablink");
+						  for (i = 0; i < tablinks.length; i++) {
+						    tablinks[i].style.backgroundColor = "";
+						  }
+						  document.getElementById(pageName).style.display = "block";
+						  elmnt.style.backgroundColor = color;
+						}
+
+						// Get the element with id="defaultOpen" and click on it
+						document.getElementById("defaultOpen").click();
+						</script>
 
 			</div>
-
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
 					<ul class="icons">
-						<li><a href="https://twitter.com/realadityaanand" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="https://github.com/adityaanand7" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						<li><a href="https://www.facebook.com/aditya.anand.75033/" class="icon brands fa-facebook"><span class="label">Facebook</span></a></li>
 						<li><a href="https://medium.com/@adityaanand_25021" class="icon brands fa-medium"><span class="label">Instagram</span></a></li>
