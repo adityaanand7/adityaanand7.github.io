@@ -2606,7 +2606,7 @@ input, select, textarea {
 		left: 0;
 		padding: 8em 4em;
 		position: fixed;
-		text-align: right;
+		text-align: center;
 		top: 0;
 		width: 35%;
 	}
@@ -2645,7 +2645,7 @@ input, select, textarea {
 		}
 
 		#header .image.avatar {
-			margin: 0 0 2.5em 0;
+			margin: -2em 9em 4.5em 4em;
 			width: 6.25em;
 		}
 
@@ -2690,7 +2690,7 @@ input, select, textarea {
 	#main {
 		margin-left: 35%;
 		max-width: 80em;
-		padding: 4em 4em 4em 2em;
+		padding: 2em 2em 4em 2em;
 		width: calc(100% - 35%);
 	}
 
