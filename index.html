@@ -4,7 +4,9 @@
 		<title>Aditya Anand</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
 	</head>
 	
 	<style>			
@@ -18,7 +20,7 @@
 		  cursor: pointer;
 		  padding: 14px 16px;
 		  font-size: 17px;
-		  width: 25%;
+		  width: 20%;
 		}
 
 		.tablink:hover {
@@ -31,6 +33,23 @@
 		  display: none;
 		  padding: 100px 20px;
 		  height: 100%;
+		}
+		div.background {
+ 		 background-color: #ddd;
+
+		}
+
+		div.transbox {
+		  margin: 30px;
+		  background-color: #ffffff;
+		  border: 1px solid black;
+		  opacity: 0.9;
+		}
+
+		div.transbox p {
+		  margin: 0%;
+		  font-weight: bold;
+		  color: #000000;
 		}
 
 	</style>
@@ -50,40 +69,49 @@
 
 		<!-- Main -->
 			<div id="main">
-						<div class="tab">
-							  <button class="tablink" onclick="openPage('About Me' , this,'#0088cc')" id="defaultOpen">About Me</button>
-							  <button class="tablink" onclick="openPage('Reseach Area' , this,'#0088cc')">Research Area</button>
-							  <button class="tablink" onclick="openPage('Acedemic Background', this,'#0088cc')">Academic Background</button>
-							  <button class="tablink" onclick="openPage('Courses', this,'#0088cc')">Courses</button>
-							  <button class="tablink" onclick="openPage('Acedemic Experience', this,'#0088cc')">Academic Experience</button>
-							  <button class="tablink" onclick="openPage('Awards and Achievements', this,'#0088cc')">Awards and Achievements</button>
-							  <button class="tablink" onclick="openPage('Publications', this,'#0088cc')">Publications</button>
-							  <button class="tablink" onclick="openPage( 'Contact Me', this,'#0088cc')">Contact Me</button>
+						<div class="w3-bar" >
+							  <button style="width:20%" class="tablink" onclick="openPage('About Me' , this,'#0088cc')" id="defaultOpen">About Me</button>
+							  <button style="width:20%" class="tablink " onclick="openPage('Reseach Area' , this,'#0088cc')">Research Area</button>
+							  <button style="width:20" class="tablink " onclick="openPage('Acedemic Background', this,'#0088cc')">Academic Background</button>
+							  <button style="width:20%" class="tablink " onclick="openPage('Courses', this,'#0088cc')">Courses</button>
+							  <button style="width:20%" class="tablink " onclick="openPage('Acedemic Experience', this,'#0088cc')">Academic Experience</button>
+							  <button style="width:20%" class="tablink " onclick="openPage('Awards and Achievements', this,'#0088cc')">Achievements</button>
+							  <button style="width:20%" class="tablink " onclick="openPage('Publications', this,'#0088cc')">Publications</button>
+							   <button style="width:20%" class="tablink " onclick="openPage( 'News', this,'#0088cc')">News</button>
+							    <button style="width:20%" class="tablink " onclick="openPage( 'Pictures', this,'#0088cc')">Pictures</button>
+							  <button style="width:20%" class="tablink " onclick="openPage( 'Contact Me', this,'#0088cc')">Contact Me</button>
 						 </div>
 
 						<div id="About Me" class="tabcontent">
 							<section id="one">
-								<br><br><br><br><br>
+								
 								<p>Hello! I am 1st year MS Research Scholar in <a href ="https://iitmandi.ac.in/Schools/SCEE/index.php">School of Computing & Electrical Engineering</a> in Computer Science programme at IIT Mandi. My Research interests lie primarily in the area of Compilers and programming languages. I am working under the guidance of <a href ="https://manas.gitlab.io/">Dr. Manas Thakur </a>.</p>
 							</section>
-						</div>
+							<hr>
+							<h3> <a href ="">Recent News<h3>
+							<div class="background">
+						    <div class="transbox">
+						    <h6><B><i>&#9679;&ensp; 1.<a href ="">&ensp; First Techinal Blog "How to get started with Soot."</a></i>&ensp;&ensp;--- Upcoming ---(14th March 2021)</B></h6>
+						    <br><br><br><br>
+
+							</div>
+							</div>
+						   </div>
 
 						<div id="Reseach Area" class="tabcontent">
 							<section id="two">
-								<br>
 								<p> 
-									<br><br><br><br>
-									1. Compiler Optimizations<br><br>
-								 	2. Programming Languages<br><br>
-								 	3. Program Analysis<br> <br>
+									1. <i>Compiler Optimizations</i><br><br>
+								 	2. <i>Programming Languages</i><br><br>
+								 	3. <i>Program Analysis</i><br> <br>
 								</p>	
 							</section> 
 						</div>
 
 						<div id="Acedemic Background" class="tabcontent">
 							<section id="three">
-								<br><br><br><br>
-								1. MS (Research) School of Computing & Electrical Engineering, <a href ="http://iitmandi.ac.in">Indian Institute of Technology Mandi</a> <br><br>
+								<br>
+								1. MS (Research)<a href= "http://www.iitmandi.ac.in/Schools/SCEE/index.php"> School of Computing & Electrical Engineering </a>, <a href ="http://iitmandi.ac.in">Indian Institute of Technology Mandi</a> <br><br>
 
 								2. M.Tech. (CSE), <a href ="https://nith.ac.in/">National Institute of Technology Hamirpur</a> (2020) -->Discontinued <br><br>
 
@@ -96,7 +124,6 @@
 
 						<div id="Courses" class="tabcontent">
 							<section id="four">
-								<br><br><br><br><br>
 								<b> &#9679; (CS507)Computer Architecture  </b> <br>
 									<p>&ensp;Offered by: <a href ="http://faculty.iitmandi.ac.in/~anil/"> Dr. A. K. Sao </a>(Feb-21 to Jun-21) </P>
 								<b> &#9679; (CS611)Program Analysis  </b> <br>
@@ -116,7 +143,7 @@
 						</div>
 						<div id="Acedemic Experience" class="tabcontent">
 							<section id="five">
-								<br><br><br><br>
+								<br>
 								<p>	
 									<br>
 									1. Teaching Assistant  <a href = "https://manas.gitlab.io/courses/pop/spring21/">(CS302: Paradigms of Programming)</a> Indian Instiute of Technology Mandi, Spring 2021 <br><br>
@@ -127,7 +154,6 @@
 
 						<div id="Awards and Achievements" class="tabcontent">
 							<section id="six">
-								<br><br><br><br>
 								<p>
 									<br>
 									1. Department Topper (M.Tech.) (till 2nd Sem) in Department of Computer Science ,NIT Hamirpur  (2020) <br><br>
@@ -141,16 +167,107 @@
 						
 						<div id="Publications" class="tabcontent">
 						  <section id="seven">
-						  <br><br><br><br>
-						  <p>---------------------------------COMING SOON------------------------------------------------</p>
+						  <br>
+						  <p>-----------------------COMING SOON--------------------------------</p>
 						</div>
-						
-						<div id="Contact Me" class="tabcontent">
+						<div id="News" class="tabcontent">
 							<section id="eight">
+							
+								<div class="background">
+						    	<div class="transbox">
+						    	<h3><B><i>&#9679;&ensp; 1.<a href ="">&ensp; First Techinal Blog "How to get started with Soot."</a></i>&ensp;&ensp;--- Upcoming ---(14th March 2021)</B></h3>
+						    	<br><br><br><br>
+
+							</section>
+						</div>
+						<div id="Pictures" class="tabcontent">
+							<section id="nine">
+								
+								<div class="w3-container">
+									</div>
+
+									<div class="w3-row-padding">
+									  <div class="w3-col s3 w3-container">
+									  <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg('1');">
+									    <img src="images/1.Neri_Road.jpg" alt="Neri Road" style="width:100%">
+									  </a>
+									  </div>
+									  <div class="w3-col s3 w3-container">
+									    <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg('2');">
+									      <img src="images/2.Neri_Road.jpg" alt="Snow" style="width:100%">
+									    </a>
+									  </div>
+									  <div class="w3-col s3 w3-container">
+									    <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg('3');">
+									      <img src="images/3.Arnehar_Road.jpg" alt="Mountains" style="width:100%">
+									    </a>
+									  </div>
+
+									  <div class="w3-col s3 w3-container">
+									    <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg('4');">
+									      <img src="images/5.College_Campus.jpg" alt="Lights" width="250" height="120">
+									      <h6><sup>Credits: <a href ="https://manas.gitlab.io/"><sup>Dr. Manas Thakur</sup></a><h6>
+									    </a>
+									  </div>
+									  <div class="w3-col s3 w3-container">
+									    <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg('5');">
+									      <img src="images/4.College_Campus.jpg" alt="Lights" width="250" height="120">
+									    </a>
+									  </div>
+									</div><br>
+
+									<div id="1" class="picture w3-display-container" style="display:none">
+									  <img src="images/1.Neri_Road.jpg" alt="1" style="width:100%">
+									  <span onclick="this.parentElement.style.display='none'" 
+									  class="w3-display-topright w3-button w3-transparent w3-text-white">&times;</span>
+									  <div class="w3-display-bottomleft w3-container w3-padding w3-text-white">Neri Road</div>
+									</div>
+
+									<div id="2" class="picture w3-display-container" style="display:none">
+									  <img src="images/2.Neri_Road.jpg" alt="2" style="width:100%">
+									  <span onclick="this.parentElement.style.display='none'" 
+									  class="w3-display-topright w3-button w3-transparent w3-text-white">&times;</span>
+									  <div class="w3-display-bottomleft w3-container w3-padding w3-text-white">Neri Road</div>
+									</div>
+
+									<div id="3" class="picture w3-display-container" style="display:none">
+									  <img src="images/3.Arnehar_Road.jpg" alt="3" style="width:100%">
+									  <span onclick="this.parentElement.style.display='none'" 
+									  class="w3-display-topright w3-button w3-transparent">&times;</span>
+									  <div class="w3-display-bottomleft w3-container w3-padding w3-text-white">Arnehar Road</div>
+									</div>
+
+									<div id="5" class="picture w3-display-container" style="display:none">
+									  <img src="images/4.College_Campus.jpg" alt="4" style="width:100%">
+									  <span onclick="this.parentElement.style.display='none'" 
+									  class="w3-display-topright w3-button w3-transparent w3-text-white">&times;</span>
+									  <div class="w3-display-bottomleft w3-container w3-padding w3-text-white">North Campus</div>
+									</div>
+
+									<div id="4" class="picture w3-display-container" style="display:none">
+									  <img src="images/5.College_Campus.jpg" alt="5" style="width:100%">
+									  <span onclick="this.parentElement.style.display='none'" 
+									  class="w3-display-topright w3-button w3-transparent w3-text-white">&times;</span>
+									  <div class="w3-display-bottomleft w3-container w3-padding w3-text-white">North Campus</div>
+									</div>
+									<script>
+										function openImg(imgName) {
+										  var i, x;
+										  x = document.getElementsByClassName("picture");
+										  for (i = 0; i < x.length; i++) {
+										    x[i].style.display = "none";
+										  }
+										  document.getElementById(imgName).style.display = "block";
+										}
+									</script>
+							</section>
+						</div>
+						<div id="Contact Me" class="tabcontent">
+							<section id="ten">
 					
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">
-									<br><br><br><br>
+									<br>
 									<li>
 										
 										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
