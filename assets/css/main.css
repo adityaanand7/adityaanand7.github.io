@@ -1765,7 +1765,7 @@ input, select, textarea {
 	}
 
 	header p {
-		color: #b2b2b2;
+		color: #FFFFFF;
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -2597,14 +2597,14 @@ input, select, textarea {
 		justify-content: space-between;
 		background-color: #000000;
 		background-attachment: scroll ,								scroll;
-		background-image: url("../../images/index.png"), url("../../images/bg.jpg");
+		background-image: url("../../images/index.png"), url("../../images/thumbs/bg.jpg");
 		background-position: top left ,							bottom left;
 		background-repeat: no-repeat ,							no-repeat;
-		background-size: 10% ,								200%;
-		color: #000000;
+		background-size: 10% ,								300%;
+		color: #FFFFFF;
 		height: 100%;
 		left: 0;
-		padding: 8em 4em;
+		padding: 6em 3em;
 		position: fixed;
 		text-align: center;
 		top: 0;
