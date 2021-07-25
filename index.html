@@ -22,7 +22,13 @@
 		  font-size: 17px;
 		  width: 20%;
 		}
-
+		
+		var viewMode = getCookie("view-mode");
+if(viewMode == "desktop"){
+    viewport.setAttribute('content', 'width=1024');
+}else if (viewMode == "mobile"){
+    viewport.setAttribute('content', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');
+}
 		.tablink:hover {
 		  background-color: #777;
 		}
@@ -133,7 +139,7 @@
 								<b> &#9679; (CS523) Verification of Reactive System  </b> <br>
 									<p>&ensp;Offered by: <a href ="http://faculty.iitmandi.ac.in/~astrid/"> Dr. Astrid Kiehn </a> (Sep-20 to Dec-20) </P>
 								<b> &#9679; (CS592) Reactive Design Pattern  </b> <br>
-									<p>&ensp;Offered by: <a href ="http://faculty.iitmandi.ac.in/~tag/">Dr. Timothy A Gonsalves </a>& <a href ="https://manas.gitlab.io/">Dr. Manas Thakur </a> (Sep-20 to Dec-20) </P>
+									<p>&ensp;Offered by: <a href ="http://faculty.iitmandi.ac.in/~tag/">Prof. Timothy A Gonsalves </a>& <a href ="https://manas.gitlab.io/">Dr. Manas Thakur </a> (Sep-20 to Dec-20) </P>
 								<b> &#9679; (CS502) Compiler Design  </b> <br>
 									<p>&ensp;Offered by: <a href ="https://manas.gitlab.io/">Dr. Manas Thakur</a> (Sep-20 to Dec-20)
 									 Details available at:  <a href = "https://manas.gitlab.io/courses/compilers/fall20/"> Course Details</a> </p>
