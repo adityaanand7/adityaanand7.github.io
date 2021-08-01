@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="assets/css/main.css" />
    	 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>	
+   	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	
 	<style>			
@@ -22,13 +23,6 @@
 		  font-size: 17px;
 		  width: 20%;
 		}
-		
-		var viewMode = getCookie("view-mode");
-if(viewMode == "desktop"){
-    viewport.setAttribute('content', 'width=1024');
-}else if (viewMode == "mobile"){
-    viewport.setAttribute('content', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');
-}
 		.tablink:hover {
 		  background-color: #777;
 		}
@@ -57,11 +51,70 @@ if(viewMode == "desktop"){
 		  font-weight: bold;
 		  color: #000000;
 		}
+		
+body {
+  margin: 0;
+  font-family: Cambria, Monospace,sans-serif;
 
+}
+
+.topnav {
+color: black;
+  overflow: hidden;
+  background-color: #ddd;
+    padding: 20px 50px;
+display: inline-block; 
+
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #ddd;
+  color: black;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #0088cc;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
 	</style>
-
-
-	<body class="is-preload">
+		<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
@@ -73,37 +126,54 @@ if(viewMode == "desktop"){
 				
 			</header>
 
+
+
+
 		<!-- Main -->
 			<div id="main">
-						<div class="w3-bar" >
-							  <button style="width:20%" class="tablink" onclick="openPage('About Me' , this,'#0088cc')" id="defaultOpen">About Me</button>
-							  <button style="width:20%" class="tablink " onclick="openPage('Reseach Area' , this,'#0088cc')">Research Area</button>
-							  <button style="width:20" class="tablink " onclick="openPage('Acedemic Background', this,'#0088cc')">Background</button>
-							  <button style="width:20%" class="tablink " onclick="openPage('Courses', this,'#0088cc')">Courses</button>
-							  <button style="width:20%" class="tablink " onclick="openPage('Acedemic Experience', this,'#0088cc')">Experience</button>
-							  <button style="width:20%" class="tablink " onclick="openPage('Awards and Achievements', this,'#0088cc')">Achievements</button>
-							  <button style="width:20%" class="tablink " onclick="openPage('Publications', this,'#0088cc')">Publications</button>
-							   <button style="width:20%" class="tablink " onclick="openPage( 'News', this,'#0088cc')">News</button>
-							    <button style="width:20%" class="tablink " onclick="openPage( 'Pictures', this,'#0088cc')">Pictures</button>
-							  <button style="width:20%" class="tablink " onclick="openPage( 'Contact Me', this,'#0088cc')">Contact Me</button>
-						 </div>
+			
+ <div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">About me</a>
+  <a href="researcharea.html"> Research Area</a>
+  <a href="background.html">Background</a>
+  <a href="courses.html">Courses</a>
+  <a href="experience.html">Experience </a>
+  <a href="awards.html">Achievements</a>
+  <a href="publication.html">Publications</a>
+  <a href="news.html">News</a>
+  <a href="pictures.html">Pictures</a>
+  <a href="contact.html">Contact Me</a>
+  
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 
-						<div id="About Me" class="tabcontent">
-							<section id="one">
-								
-								<p>Hello! I am a 1st year MS Research Scholar in <a href ="https://iitmandi.ac.in/Schools/SCEE/index.php">School of Computing & Electrical Engineering</a> in Computer Science programme at IIT Mandi. My Research interests lie primarily in the area of compilers and programming languages.
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<br><br><br>
+ <font size="4" color="black">
+<p>Hello! I am a 1st year MS Research Scholar in <a href ="https://iitmandi.ac.in/Schools/SCEE/index.php">School of Computing & Electrical Engineering</a> in Computer Science programme at IIT Mandi. My Research interests lie primarily in the area of compilers and programming languages.
 								 Currently, I am working with <a href ="https://manas.gitlab.io/">Dr. Manas Thakur </a> at <a href ="https://compl-iitmandi.netlify.app/">CompL</a>, to improve the efficiency of program analysis using "Speculative Optimizations" for JIT Compilers.</p>
-							</section>
+
 							<hr>
 							<h3> <a href ="">Recent News<h3>
 							<div class="background">
 						    <div class="transbox">
-						    <h6><B><i>&#9679;&ensp;<a href ="https://2021.ecoop.org/">&ensp; Attended 35th European Conference on Object-Oriented Programming (ECOOP), Virtual Event, July 13-17,2021."</a></i>&ensp;&ensp;</B></h3>
-						    <h6><B><i>&#9679;&ensp;<a href ="https://isoft.acm.org/seri2021/">&ensp; Attended 3rd Software Engineering Research in India update meeting (SERI), Virtual Event, July 15-17, 2021."</a></i>&ensp;&ensp;</B></h3>
+						    <h6><B>&ensp;<i>&#9679;&ensp;<a href ="https://2021.ecoop.org/">&ensp; Attended 35th European Conference on Object-Oriented Programming (ECOOP), Virtual Event, July 13-17,2021.</a></i>&ensp;&ensp;</B></h3>
+						    <h6><B>&ensp;<i>&#9679;&ensp;<a href ="https://isoft.acm.org/seri2021/">&ensp; Attended 3rd Software Engineering Research in India update meeting (SERI), Virtual Event, July 15-17, 2021.</a></i>&ensp;&ensp;</B></h3>
 						    <br><br>
 							</div>
 							</div>
-						   </div>
 
 						<div id="Reseach Area" class="tabcontent">
 							<section id="two">
@@ -141,8 +211,8 @@ if(viewMode == "desktop"){
 								<b> &#9679; (CS592) Reactive Design Pattern  </b> <br>
 									<p>&ensp;Offered by: <a href ="http://faculty.iitmandi.ac.in/~tag/">Prof. Timothy A Gonsalves </a>& <a href ="https://manas.gitlab.io/">Dr. Manas Thakur </a> (Sep-20 to Dec-20) </P>
 								<b> &#9679; (CS502) Compiler Design  </b> <br>
-									<p>&ensp;Offered by: <a href ="https://manas.gitlab.io/">Dr. Manas Thakur</a> (Sep-20 to Dec-20) 
-										Details available at: <a href = "https://manas.gitlab.io/courses/compilers/fall20/"> Course Details</a> </p>
+									<p>&ensp;Offered by: <a href ="https://manas.gitlab.io/">Dr. Manas Thakur</a> (Sep-20 to Dec-20)
+									 Details available at:  <a href = "https://manas.gitlab.io/courses/compilers/fall20/"> Course Details</a> </p>
 								<b> &#9679; (RM600) Research Methodology  </b> <br>
 									<p>&ensp;Compulsory course for all research scholars (Sep-20 to Dec-20) </p>	
 
@@ -153,10 +223,9 @@ if(viewMode == "desktop"){
 								<br>
 								<p>	
 									<br>
-									1. Teaching Assistant  <a href = "https://manas.gitlab.io/courses/compilers/fall21/">(CS502: Compiler Design)</a>, Indian Institute of Technology Mandi, Fall 2021 <br><br>
-									2. Teaching Assistant  <a href = "https://manas.gitlab.io/courses/pop/spring21/">(CS302: Paradigms of Programming)</a>, Indian Institute of Technology Mandi, Spring 2021 <br><br>
-									3. Teaching Assistant (Computer Networks), National Institute of Technology Hamirpur, Spring 2020 <br><br>
-									4. Teaching Assistant (Object Oriented Programming), National Institute of Technology Hamirpur, Fall 2019 </p>
+									1. Teaching Assistant  <a href = "https://manas.gitlab.io/courses/pop/spring21/">(CS302: Paradigms of Programming)</a>, Indian Institute of Technology Mandi, Spring 2021 <br><br>
+									2. Teaching Assistant (Computer Networks), National Institute of Technology Hamirpur, Spring 2020 <br><br>
+									3. Teaching Assistant (Object Oriented Programming), National Institute of Technology Hamirpur, Fall 2019 </p>
 							</section>	
 						</div>
 
