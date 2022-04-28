@@ -1,16 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LPMMR77F0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3LPMMR77F0');
-</script>
-	
 		<title>Aditya Anand</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,24 +51,24 @@
 		  font-weight: bold;
 		  color: #000000;
 		}
-@font-face {
-font-family: Cambria;
-src: url("fonts/Cambria.ttf") format('truetype');
-}
-@font-face {
-font-family: Cambria;
-src: url('fonts/cambriab.ttf') format('truetype');
-font-weight: bold;
-}
-@font-face {
-font-family: Cambria;
-src: url('fonts/cambriai.ttf') format('truetype');
-font-style: italic;
-}
+                @font-face {
+                    font-family: Cambria;
+                    src: url("fonts/Cambria.ttf") format('truetype');
+                }
+                @font-face {
+                    font-family: Cambria;
+                    src: url('fonts/cambriab.ttf') format('truetype');
+                    font-weight: bold;
+                }
+                @font-face {
+                    font-family: Cambria;
+                    src: url('fonts/cambriai.ttf') format('truetype');
+                    font-style: italic;
+                }
 		
 body {
   margin: 0;
-  font-family: Cambria,sans-serif;
+  font-family: Cambria, Helvetica, sans-serif;
 
 }
 
@@ -97,7 +87,7 @@ display: inline-block;
   color: #ddd;
   color: black;
   text-align: center;
-  padding: 16px 16px;
+  padding: 16px 15px;
   text-decoration: none;
   font-size: 18px;
 }
@@ -143,8 +133,7 @@ display: inline-block;
 		<!-- Header -->
 			<header id="header">
 				
-					<a href="images/avatar1.jpg" class="image avatar"><img src="images/avatar1.jpg" alt="" /></a>
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<a href="#" class="image avatar"><img src="images/avatar1.jpg" alt="" /></a>
 					<h1><strong>Aditya Anand<br /></h1>
 					<h3><strong>MS+PhD Research Scholar</h3>
 					<h3><a href="http://www.iitmandi.ac.in/">Indian Institute of Technology Mandi</a></h3>
@@ -158,12 +147,12 @@ display: inline-block;
 			<div id="main">
 			
  <div class="topnav" id="myTopnav">
-  <a href="index.html" class="active">About me</a>
-  <a href="researcharea.html"> Research Area</a>
+  <a href="index.html">About me</a>
+  <a href="researcharea.html" > Research Area</a>
   <a href="background.html">Background</a>
   <a href="courses.html">Courses</a>
   <a href="experience.html">Experience </a>
-  <a href="awards.html">Achievements</a>
+  <a href="awards.html" class="active">Achievements</a>
   <a href="publication.html">Publications</a>
   <a href="news.html">News</a>
   <a href="pictures.html">Pictures</a>
@@ -173,6 +162,18 @@ display: inline-block;
     <i class="fa fa-bars"></i>
   </a>
 </div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 
 
 <script>
