@@ -2646,7 +2646,7 @@ input, select, textarea {
 
 		#header .image.avatar {
 
-			margin: 1em 8.5em 2.5em 3em;
+			margin: -3em 8.5em 2.5em 3em;
 			display: block;
   			
   			width: 50%;
