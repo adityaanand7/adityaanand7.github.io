@@ -23,7 +23,8 @@
       <pubDate>Thu, 05 May 2022 13:23:50 -0400</pubDate>
       
       <guid>https://adityaanand7.github.io/news/</guid>
-      <description>Recent News: June 2nd-3rd 2023: Attended SERI 2023 , University of Goa, Goa, India. June 2nd 2023: Gave a talk on &amp;quot;Staged Static+Dynamic Partial Analysis for Java-like languages&amp;quot; at SERI 2023 , University of Goa, Goa, India. February 24th-25th 2023: Attended ISEC 2023 , IIIT Allahabad, Prayagraj, Uttar Pradesh, India. December 5th-10th 2022: Attended SPLASH 2022 , Auckland New Zealand. December 7th 2022: Presented SAS Paper at SPLASH 2022. December 5th 2022: Presented Poster SPLASH SRC 2022.</description>
+      <description>Recent News: June 2nd-3rd 2023: Attended SERI 2023 , University of Goa, Goa, India. June 2nd 2023: Gave a talk on &amp;quot;Staged Static+Dynamic Partial Analysis for Java-like languages&amp;quot; at SERI 2023 , University of Goa, Goa, India.
+February 24th-25th 2023: Attended ISEC 2023 , IIIT Allahabad, Prayagraj, Uttar Pradesh, India. December 5th-10th 2022: Attended SPLASH 2022 , Auckland New Zealand. December 7th 2022: Presented SAS Paper at SPLASH 2022. December 5th 2022: Presented Poster SPLASH SRC 2022.</description>
     </item>
     
     <item>
@@ -52,7 +53,7 @@ Teaching Assistant (CS611: Program Analysis), Indian Institute of Technology Man
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://adityaanand7.github.io/publications/</guid>
-      <description>2023 [W1]: Aditya Anand (with Manas Thakur). “Staged Static+Dynamic Partial Analysis for Java-like Languages”. Software Engineering Research in India (SERI), Goa University, India, June 2nd-3rd, 2023. 2022 [C2]: Aditya Anand (with Manas Thakur). &amp;ldquo;A Study of the Impact of Callbacks in Staged Static+Dynamic Partial Analysis&amp;rdquo;. In Companion Proceedings of the 2022 ACM SIGPLAN International Conference on Systems, Programming, Languages, and Applications: Software for Humanity (SPLASH Companion). [ URL ] [ Poster ] [ Preprint ] [C1]: Aditya Anand and Manas Thakur.</description>
+      <description>2023 [W1]: Aditya Anand (with Manas Thakur). “Staged Static+Dynamic Partial Analysis for Java-like Languages”. Software Engineering Research in India (SERI), Goa University, India, June 2nd-3rd, 2023. [ SLIDES ] 2022 [C2]: Aditya Anand (with Manas Thakur). &amp;ldquo;A Study of the Impact of Callbacks in Staged Static+Dynamic Partial Analysis&amp;rdquo;. In Companion Proceedings of the 2022 ACM SIGPLAN International Conference on Systems, Programming, Languages, and Applications: Software for Humanity (SPLASH Companion). [ URL ] [ Poster ] [ Preprint ] [C1]: Aditya Anand and Manas Thakur.</description>
     </item>
     
   </channel>
