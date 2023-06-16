@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog Posts on home</title>
+    <link>https://adityaanand7.github.io/posts/</link>
+    <description>Recent content in Blog Posts on home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2022 by Dane Williamson. &lt;a href=&#39;https://adityaanand7.github.io/privacy&#39;&gt;Privacy policy&lt;/a&gt;.</copyright>
+    <lastBuildDate>Fri, 06 May 2022 17:09:11 -0400</lastBuildDate><atom:link href="https://adityaanand7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Information Theory</title>
+      <link>https://adityaanand7.github.io/posts/it/</link>
+      <pubDate>Fri, 10 Feb 2023 21:05:22 -0500</pubDate>
+      
+      <guid>https://adityaanand7.github.io/posts/it/</guid>
+      <description>Brief Notes on Information Theory Surprise: Given a stochastic process which generates data $x$, the surprise associated with each datapoint is the reciprocal of its probability: $$ s(x) = \frac{1}{p(x)}; $$. The lower the probability of an observation, the more &amp;ldquo;surprised&amp;rdquo; we are at seeing it. To capture the surprise of multiple independent events, we make use of the logarithm function: $$ s(x) = \log ( \frac{1}{p(x)} )$$ $$ s(xy) = \log ( \frac{1}{p(x) \cdot p(y)} ) = \log ( \frac{1}{p(x)} ) + \log ( \frac{1}{p(y)} )= s(x) + s(y) $$ Average Surprise: Each observation has an associated probability.</description>
+    </item>
+    
+    <item>
+      <title>Variational Autoencoders</title>
+      <link>https://adityaanand7.github.io/posts/vae/</link>
+      <pubDate>Tue, 10 May 2022 15:10:15 -0400</pubDate>
+      
+      <guid>https://adityaanand7.github.io/posts/vae/</guid>
+      <description> Inference Generation ELBO Reparameterizatio Trick </description>
+    </item>
+    
+    <item>
+      <title>Maximum Likelihood Estimation</title>
+      <link>https://adityaanand7.github.io/posts/mle/</link>
+      <pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://adityaanand7.github.io/posts/mle/</guid>
+      <description>Maximum Likelihood Estimation Likelihood Likelihood describes the joint probability of observed data, y as a function of the parameters, $\theta$ of a statistical model. The likelihood is NOT a probability density function of the parameters. An intuitive way to consider the likelihood is as equal to the probability density of the outcome, y when the true value of the parameter is $\theta$.
+$\mathcal{L}$ is a probability density over y NOT $\theta$.</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Inference</title>
+      <link>https://adityaanand7.github.io/posts/bp/</link>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://adityaanand7.github.io/posts/bp/</guid>
+      <description>Bayesian Inference Bayesian Inference is an approach to statistical inference which utilises Bayes&amp;rsquo; theorem to provide updates for the probability of an outcome as new information becomes available. The mathematical formulation for Bayes theorem is quite ubiquituous and no doubt you have seen it before, however it is stated here for completeness:
+$$ p (z \mid x) = \frac{p(x \mid z) \cdot p(z)}{p(x)} $$
+Simple right? Perhaps not so much to the unitiated to whom this equation may seem very strange and as such here is a breakdown of what these terms actually mean:</description>
+    </item>
+    
+    <item>
+      <title>Variational Inference</title>
+      <link>https://adityaanand7.github.io/posts/vi/</link>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://adityaanand7.github.io/posts/vi/</guid>
+      <description>What is Variational Inference? Variational Inference is a technique used in Bayesian Statistics to approximate $p ( z \mid x)$ the conditional density of an unknown variable, z given an observed variable, x through optimization. To find this approximate density:
+select a family of densities, $\mathscr{D}$ over the latent variables. Each member of the family q(z) $\in \mathscr{D}$ is a candidate approximation to the true density. The optimization problem is then to find the member of this family which is closest in Kullback-Leibler (KL) divergence to the conditional density of interest: $$ q^{*} (z) = \underset{q(z) \in \mathscr{D}}{\text{arg min}} \quad \text{KL} (q(z) \mid \mid p(z \mid x)) $$ Kullback-Leibler Divergence The divergence between two probability distributions is a statistical distance or scoring of how the distributions differ from each other.</description>
+    </item>
+    
+  </channel>
+</rss>
