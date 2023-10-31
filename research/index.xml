@@ -7,15 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2023 by Aditya Anand. &lt;a href=&#39;https://adityaanand7.github.io/privacy&#39;&gt;Privacy policy&lt;/a&gt;.</copyright>
-    <lastBuildDate>Fri, 06 May 2022 17:09:11 -0400</lastBuildDate><atom:link href="https://adityaanand7.github.io/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 May 2022 17:09:11 -0400</lastBuildDate>
+    <atom:link href="https://adityaanand7.github.io/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Static Analysis in Java</title>
+      <link>https://adityaanand7.github.io/research/staticanalysis/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://adityaanand7.github.io/research/staticanalysis/</guid>
+      <description>&amp;ndash; Upcoming</description>
+    </item>
     <item>
       <title>Conference List (Compilers and Programming Languages)</title>
       <link>https://adityaanand7.github.io/research/conference/</link>
       <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://adityaanand7.github.io/research/conference/</guid>
       <description>Sl.No. Conference Submission Core Rank (2020) Scope of the Conference 1. POPL July A* Programming languages and systems. (both theoretical and experimental papers) 2. OOPSLA October and April A* All practical and theoretical investigations of programming languages, systems and environments. 3. ECOOP December and March A* 4. PLDI November A* 5. SAS May A 6. CGO May and September A 7. CC November A 8. ICFP March A* 9. PACT March A 10.</description>
     </item>
-    
   </channel>
 </rss>

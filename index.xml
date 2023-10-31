@@ -7,58 +7,57 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2023 by Aditya Anand. &lt;a href=&#39;https://adityaanand7.github.io/privacy&#39;&gt;Privacy policy&lt;/a&gt;.</copyright>
-    <lastBuildDate>Sat, 15 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://adityaanand7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://adityaanand7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Static Analysis in Java</title>
+      <link>https://adityaanand7.github.io/research/staticanalysis/</link>
+      <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://adityaanand7.github.io/research/staticanalysis/</guid>
+      <description>&amp;ndash; Upcoming</description>
+    </item>
     <item>
       <title>Conference List (Compilers and Programming Languages)</title>
       <link>https://adityaanand7.github.io/research/conference/</link>
       <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://adityaanand7.github.io/research/conference/</guid>
       <description>Sl.No. Conference Submission Core Rank (2020) Scope of the Conference 1. POPL July A* Programming languages and systems. (both theoretical and experimental papers) 2. OOPSLA October and April A* All practical and theoretical investigations of programming languages, systems and environments. 3. ECOOP December and March A* 4. PLDI November A* 5. SAS May A 6. CGO May and September A 7. CC November A 8. ICFP March A* 9. PACT March A 10.</description>
     </item>
-    
     <item>
       <title>News</title>
       <link>https://adityaanand7.github.io/news/</link>
       <pubDate>Thu, 05 May 2022 13:23:50 -0400</pubDate>
-      
       <guid>https://adityaanand7.github.io/news/</guid>
-      <description>Recent News: June 2nd-3rd 2023: Attended SERI 2023 , University of Goa, Goa, India.
+      <description>Recent News: October 22nd-27th 2023: Virtually attended SPLASH 2023, Cascais, Portugal.
+June 2nd-3rd 2023: Attended SERI 2023 , University of Goa, Goa, India.
 June 2nd 2023: Gave a talk on &amp;ldquo;Staged Static+Dynamic Partial Analysis for Java-like languages&amp;rdquo; at SERI 2023 , University of Goa, Goa, India.
 February 24th-25th 2023: Attended ISEC 2023, IIIT Allahabad, Prayagraj, Uttar Pradesh, India.
 December 5th-10th 2022: Attended SPLASH 2022, Auckland New Zealand.
-December 7th 2022: Presented SAS Paper at SPLASH 2022. December 5th 2022: Presented Poster SPLASH SRC 2022.</description>
+December 7th 2022: Presented SAS Paper at SPLASH 2022.</description>
     </item>
-    
     <item>
       <title>About Me</title>
       <link>https://adityaanand7.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://adityaanand7.github.io/about/</guid>
       <description>Hello! I am a PhD Research Scholar in Department of Computer Science and Engineering at IIT Bombay working with Dr. Manas Thakur. I work in the area of compiler optimizations and program analysis. Currently I am working to design a speculative static+dynamic program analysis technique for Java&amp;rsquo;s JIT compiler.
 Academic Experience Teaching Assistant (CS614: Advanced Compilers), Indian Institute of Technology Bombay, Autumn 2023.
 Teaching Assistant (CS515: Advanced Computer Science Practicum), Indian Institute of Technology Mandi, Fall 2022.</description>
     </item>
-    
     <item>
       <title>Privacy policy</title>
       <link>https://adityaanand7.github.io/privacy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://adityaanand7.github.io/privacy/</guid>
       <description>This is where the imprint should go.</description>
     </item>
-    
     <item>
       <title>Publications</title>
       <link>https://adityaanand7.github.io/publications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://adityaanand7.github.io/publications/</guid>
       <description>Legend. C: Conference; W: Workshop
 2023 [W1]: SERI 2023 Aditya Anand (with Manas Thakur). “Staged Static+Dynamic Partial Analysis for Java-like Languages”. Software Engineering Research in India (SERI), Goa University, India, June 2nd-3rd, 2023. [ SLIDES ] 2022 [C2]: SPLASH SRC 2022 Aditya Anand (with Manas Thakur). &amp;ldquo;A Study of the Impact of Callbacks in Staged Static+Dynamic Partial Analysis&amp;rdquo;. In Companion Proceedings of the 2022 ACM SIGPLAN International Conference on Systems, Programming, Languages, and Applications: Software for Humanity (SPLASH Companion).</description>
     </item>
-    
   </channel>
 </rss>
