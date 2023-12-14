@@ -19,20 +19,11 @@
     
     <item>
       <title>Conference List (Compilers and Programming Languages)</title>
-      <link>https://adityaanand7.github.io/research/conference-list/</link>
-      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://adityaanand7.github.io/research/conference-list/</guid>
-      <description> </description>
-    </item>
-    
-    <item>
-      <title>Conference List (Compilers and Programming Languages)</title>
       <link>https://adityaanand7.github.io/research/conference/</link>
       <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://adityaanand7.github.io/research/conference/</guid>
-      <description>Sl.No. Conference Submission Core Rank (2020) Scope of the Conference 1. POPL July A* Programming languages and systems. (both theoretical and experimental papers) 2. OOPSLA October and April A* All practical and theoretical investigations of programming languages, systems and environments. 3. ECOOP December and March A* 4. PLDI November A* 5. SAS May A 6. CGO May and September A 7. CC November A 8. ICFP March A* 9. PACT March A 10.</description>
+      <description>Sl.No. Conference Submission Core Rank (2020) Scope of the Conference 1. POPL July A* Programming languages and systems. (both theoretical and experimental papers) 2. OOPSLA October and April A* All practical and theoretical investigations of programming languages, systems and environments. 3. ECOOP December and March A* Originally focused on object-orientation, now includes all practical and theoretical investigations of programming languages, systems and environments 4. PLDI November A* All programming-language concepts, Novel system designs, thorough empirical work, well-motivated theoretical results, and new application areas.</description>
     </item>
     
   </channel>
