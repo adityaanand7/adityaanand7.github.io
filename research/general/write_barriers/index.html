@@ -141,8 +141,7 @@ The JIT compiler is required to insert a write barrier in the code which it gene
 <li>if there is a <code>store of a reference into an array element</code>.</li>
 <li>If there is an <code>arraycopy of reference</code>.</li>
 </ul>
-<p>Having write barriers in the code is an overhead. So there are some optimizations that can be performed to reduce the number of write barriers that are required in the JIT compiled code.</p>
-<p>JIT performance can be greatly improved if the operations/checks performed by the write-barrier can be inlined.</p>
+<p>Having write barriers in the code is an overhead. So there are some optimizations that can be performed to reduce the number of write barriers that are required in the JIT compiled code. JIT performance can be greatly improved if the operations/checks performed by the write-barrier can be inlined.</p>
 <p>There are four major checks that are performed in the write barrier.</p>
 <ol>
 <li>
