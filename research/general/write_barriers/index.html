@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    
+    <meta name="description" content="In languages like Java where garbage collector (GC) is used for cleaning up the unused references. The idea of write barriers is used at runtime to communicate with GC for letting the GC know the set of objects that needs to be tracked due to object pointers getting stored in another object and classes.
+The JIT compiler is required to insert a write barrier in the code which it generates to maintain the function correctness.">
+    <meta name="keywords" content="">
+
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Write Barriers in JIT Compilers"/>
+<meta name="twitter:description" content="In languages like Java where garbage collector (GC) is used for cleaning up the unused references. The idea of write barriers is used at runtime to communicate with GC for letting the GC know the set of objects that needs to be tracked due to object pointers getting stored in another object and classes.
+The JIT compiler is required to insert a write barrier in the code which it generates to maintain the function correctness."/>
+
+    <meta property="og:title" content="Write Barriers in JIT Compilers" />
+<meta property="og:description" content="In languages like Java where garbage collector (GC) is used for cleaning up the unused references. The idea of write barriers is used at runtime to communicate with GC for letting the GC know the set of objects that needs to be tracked due to object pointers getting stored in another object and classes.
+The JIT compiler is required to insert a write barrier in the code which it generates to maintain the function correctness." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://adityaanand7.github.io/research/general/write_barriers/" /><meta property="article:section" content="research" />
+<meta property="article:published_time" content="2024-02-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-02-20T00:00:00+00:00" />
+
+
+
+    <title>
+  Write Barriers in JIT Compilers · Aditya Anand
+</title>
+
+    
+      <link rel="canonical" href="https://adityaanand7.github.io/research/general/write_barriers/">
+    
+
+    <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css" integrity="sha256-2f3b/&#43;byfmmYXcX&#43;BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css" integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/aa-logo.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.123.0">
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-auto">
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Aditya Anand
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/publications">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/research">Research</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/news">Recent News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/pdf/aditya-cv.pdf">CV</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://adityaanand7.github.io/research/general/write_barriers/">
+          Write Barriers in JIT Compilers
+        </a>
+      </h1>
+    </header>
+
+    <p>In languages like Java where garbage collector (GC) is used for cleaning up the unused references. The idea of write barriers is used at runtime to communicate with GC for letting the GC know the set of objects that needs to be tracked due to object pointers getting stored in another object and classes.</p>
+<p>The JIT compiler is required to insert a write barrier in the code which it generates to maintain the function correctness.</p>
+<p>The write barriers are normally used after following situations:</p>
+<ul>
+<li>If there is a <code>store of a reference to a field in an object</code> (either static or an instance field).</li>
+<li>if there is a <code>store of a reference into an array element</code>.</li>
+<li>If there is an <code>arraycopy of reference</code>.</li>
+</ul>
+<p>Having write barriers in the code is an overhead. So there are some optimizations that can be performed to reduce the number of write barriers that are required in the JIT compiled code. JIT performance can be greatly improved if the operations/checks performed by the write-barrier can be inlined.</p>
+<p>There are four major checks that are performed in the write barrier.</p>
+<ol>
+<li>
+<p><code>Nullness Check:</code> Check if a store like (<code>a.f = b</code>) is performed to a null object. This can checked both at compile time and at runtime.</p>
+</li>
+<li>
+<p><code>Generational Check:</code> The generational garbage collector divides the heap in two part; a young generation space where the newly created object resides(GC happens frequently) and a tenured space (old generation) where long-lived objects resides (GC doesn&rsquo;t happen frequently). (Note that the young generation is further divided into one Eden and two Survivor spaces). And now for store statement like (<code>a.f=b</code>) where <code>b</code> is in young generation and <code>a</code> is in old generation, the GC should remember to scan the object (<code>a</code>) stored in old generation.</p>
+</li>
+<li>
+<p><code>Heap Object Check:</code> While executing JIT compiled code there is possibility that an object might get allocated on method&rsquo;s stack-frame. There can be situations where we can not determine whether the object is on heap or stack, so a runtime check is required to determine the same.
+Note: A stack-allocated object doesn&rsquo;t required a write barrier check.</p>
+</li>
+<li>
+<p><code>Concurrent Mark Check:</code> Marking set of objects for garbage collection can be performed concurrently. A special thread can be used to just mark the set of live objects. However if an object <code>b</code> is stored into an object <code>a</code> that has already been scanned by the concurrent thread then object <code>a</code> need to be rescanned to ensure the functional correctness.</p>
+</li>
+</ol>
+
+  </article>
+</section>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
+    integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+    integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    ©
+    
+    2024
+    
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+      
+      <script src="/js/coder.min.9cf2dbf9b6989ef8eae941ffb4231c26d1dc026bca38f1d19fdba50177d8a9ac.js" integrity="sha256-nPLb&#43;baYnvjq6UH/tCMcJtHcAmvKOPHRn9ulAXfYqaw="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
