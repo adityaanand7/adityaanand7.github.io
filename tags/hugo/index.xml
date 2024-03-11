@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Aditya Anand</title>
+    <link>http://localhost:1313/tags/hugo/</link>
+    <description>Recent content in Hugo on Aditya Anand</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2023 by Aditya Anand. &lt;a href=&#39;http://localhost:1313/privacy&#39;&gt;Privacy policy&lt;/a&gt;.</copyright>
+    <lastBuildDate>Tue, 11 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mais Conteúdo Rico</title>
+      <link>http://localhost:1313/research/general/write_barriers/</link>
+      <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/general/write_barriers/</guid>
+      <description>In languages like Java where garbage collector (GC) is used for cleaning up the unused references. The idea of write barriers is used at runtime to communicate with GC for letting the GC know the set of objects that needs to be tracked due to object pointers getting stored in another object and classes.&#xA;The JIT compiler is required to insert a write barrier in the code which it generates to maintain the function correctness.</description>
+    </item>
+  </channel>
+</rss>

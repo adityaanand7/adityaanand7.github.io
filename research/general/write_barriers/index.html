@@ -63,7 +63,7 @@ The JIT compiler is required to insert a write barrier in the code which it gene
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
-    <meta name="generator" content="Hugo 0.123.0">
+    <meta name="generator" content="Hugo 0.123.8">
   </head>
 
   
@@ -145,17 +145,17 @@ The JIT compiler is required to insert a write barrier in the code which it gene
 <p>There are four major checks that are performed in the write barrier.</p>
 <ol>
 <li>
-<p><code>Nullness Check:</code> Check if a store like (<code>a.f = b</code>) is performed to a null object. This can checked both a compile time and at runtime.</p>
+<p><code>Nullness Check:</code> Check if a store like (<code>a.f = b</code>) is performed to a null object. This can checked both at compile time and at runtime.</p>
 </li>
 <li>
-<p><code>Generational Check:</code> Generally the generational garbage collector divides the heap in two part; a young generation space where the newly created object resides(GC happens frequently) and a tenured space (old generation) where long-lived objects reside (GC doesn&rsquo;t happen frequently). (Note that the young generation is further divided into one Eden and two Survivor spaces). And now for store statement like (<code>a.f=b</code>) where <code>b</code> is in young generation and <code>a</code> is in old generation, in that case the GC should remember to scan the object (<code>a</code>) stored in old generation.</p>
+<p><code>Generational Check:</code> The generational garbage collector divides the heap in two part; a young generation space where the newly created object resides(GC happens frequently) and a tenured space (old generation) where long-lived objects resides (GC doesn&rsquo;t happen frequently). (Note that the young generation is further divided into one Eden and two Survivor spaces). And now for store statement like (<code>a.f=b</code>) where <code>b</code> is in young generation and <code>a</code> is in old generation, the GC should remember to scan the object (<code>a</code>) stored in old generation.</p>
 </li>
 <li>
-<p><code>Heap Object Check:</code> While executing JIT compiled code there is the possibility that an object might get allocated on method&rsquo;s stack-frame. There can be situations where we can not determine whether the object is on heap or stack, so a runtime check is required to determine the same.
-Note: A stack-allocated object doesn&rsquo;t require a write barrier check.</p>
+<p><code>Heap Object Check:</code> While executing JIT compiled code there is possibility that an object might get allocated on method&rsquo;s stack-frame. There can be situations where we can not determine whether the object is on heap or stack, so a runtime check is required to determine the same.
+Note: A stack-allocated object doesn&rsquo;t required a write barrier check.</p>
 </li>
 <li>
-<p><code>Concurrent Mark Check:</code> Marking a set of objects for garbage collection can be performed concurrently. A special thread can be used to just mark the set of live objects. Suppose if object <code>b</code> is stored into an object <code>a</code> that has already been scanned by the concurrent thread then object <code>a</code> needs to be rescanned to ensure functional correctness.</p>
+<p><code>Concurrent Mark Check:</code> Marking set of objects for garbage collection can be performed concurrently. A special thread can be used to just mark the set of live objects. However if an object <code>b</code> is stored into an object <code>a</code> that has already been scanned by the concurrent thread then object <code>a</code> need to be rescanned to ensure the functional correctness.</p>
 </li>
 </ol>
 
