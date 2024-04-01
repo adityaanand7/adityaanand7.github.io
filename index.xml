@@ -28,7 +28,7 @@
       <link>https://adityaanand7.github.io/news/</link>
       <pubDate>Thu, 05 May 2022 13:23:50 -0400</pubDate>
       <guid>https://adityaanand7.github.io/news/</guid>
-      <description>Recent News: March 11th 2024: &amp;ldquo;Poster Presentation Winner&amp;rdquo; in RISC&#39;24 at Department of Computer Science and Engineering @ IIT Bombay 🎉.&#xA;February 17th 2024: Sucessfully completed course on Introduction to GPU Programming organised by IIT Madras. [Certificate] January 25th 2024: &amp;ldquo;Excellence in Teaching Assistantship&amp;rdquo; award for TA of Autumn Semester 2023 (Course: Advanced Compilers) 🎉.&#xA;January 4th 2024: Joining the Artifact Evaluation Committee ECOOP 2024.&#xA;January 3rd 2024: Joining the Artifact Evaluation Committee PLDI 2024.</description>
+      <description>Recent News: April 1st 2024: &amp;ldquo;Paper Acceptance at PLDI&amp;rdquo;. Paper titled &amp;ldquo;Optimistic Stack Allocation and Dynamic Heapification for Manged Runtimes&amp;rdquo; accepted at PLDI 2024 Copenhagen, Denmark June 24-28, 2024. 🎉.&#xA;March 11th 2024: &amp;ldquo;Poster Presentation Winner&amp;rdquo; in RISC&#39;24 at Department of Computer Science and Engineering @ IIT Bombay 🎉.&#xA;February 17th 2024: Sucessfully completed course on Introduction to GPU Programming organised by IIT Madras. [Certificate] January 25th 2024: &amp;ldquo;Excellence in Teaching Assistantship&amp;rdquo; award for TA of Autumn Semester 2023 (Course: Advanced Compilers) 🎉.</description>
     </item>
     <item>
       <title>About Me</title>
@@ -49,7 +49,7 @@
       <link>https://adityaanand7.github.io/publications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://adityaanand7.github.io/publications/</guid>
-      <description>Legend. C: Conference; W: Workshop&#xA;2023 [W1]: SERI 2023 Aditya Anand (with Manas Thakur). “Staged Static+Dynamic Partial Analysis for Java-like Languages”. Software Engineering Research in India (SERI), Goa University, India, June 2nd-3rd, 2023. [ SLIDES ] 2022 [C2]: SPLASH SRC 2022 Aditya Anand (with Manas Thakur). &amp;ldquo;A Study of the Impact of Callbacks in Staged Static+Dynamic Partial Analysis&amp;rdquo;. In Companion Proceedings of the 2022 ACM SIGPLAN International Conference on Systems, Programming, Languages, and Applications: Software for Humanity (SPLASH Companion).</description>
+      <description>Legend. C: Conference; J:Journal; W: Workshop&#xA;2024 [J1]: PLDI 2024 Aditya Anand, Solai Adithya, Swapnil Rustagi, Priyam Seth, Vijay Sundaresan, Daryl Maier, V. Krishna Nandivada, and Manas Thakur. “Optimistic Stack Allocation and Dynamic Heapification for Managed Runtimes”. (To appear) In Proceedings of the ACM on Programming Languages (PLDI), Copenhagen, Denmark, June 24-28, 2024. 2023 [W1]: SERI 2023 Aditya Anand (with Manas Thakur). “Staged Static+Dynamic Partial Analysis for Java-like Languages”. Software Engineering Research in India (SERI), Goa University, India, June 2nd-3rd, 2023.</description>
     </item>
   </channel>
 </rss>
