@@ -49,7 +49,7 @@
       <link>https://adityaanand7.github.io/publications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://adityaanand7.github.io/publications/</guid>
-      <description>Legend. C: Conference; J:Journal; W: Workshop&#xA;2024 [J1]: PLDI 2024 Aditya Anand, Solai Adithya, Swapnil Rustagi, Priyam Seth, Vijay Sundaresan, Daryl Maier, V. Krishna Nandivada, and Manas Thakur. “Optimistic Stack Allocation and Dynamic Heapification for Managed Runtimes”. (To appear) In Proceedings of the ACM on Programming Languages (PLDI), Copenhagen, Denmark, June 24-28, 2024. 2023 [W1]: SERI 2023 Aditya Anand (with Manas Thakur). “Staged Static+Dynamic Partial Analysis for Java-like Languages”. Software Engineering Research in India (SERI), Goa University, India, June 2nd-3rd, 2023.</description>
+      <description>Legend. C: Conference; J:Journal; W: Workshop&#xA;2024 [J1]: PLDI 2024 Aditya Anand, Solai Adithya, Swapnil Rustagi, Priyam Seth, Vijay Sundaresan, Daryl Maier, V. Krishna Nandivada, and Manas Thakur. “Optimistic Stack Allocation and Dynamic Heapification for Managed Runtimes”. (To appear) In Proceedings of the ACM on Programming Languages (PLDI), Copenhagen, Denmark, June 24-28, 2024. [ Preprint ] 2023 [W1]: SERI 2023 Aditya Anand (with Manas Thakur). “Staged Static+Dynamic Partial Analysis for Java-like Languages”.</description>
     </item>
   </channel>
 </rss>
