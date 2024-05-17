@@ -28,7 +28,7 @@
       <link>https://adityaanand7.github.io/news/</link>
       <pubDate>Thu, 05 May 2022 13:23:50 -0400</pubDate>
       <guid>https://adityaanand7.github.io/news/</guid>
-      <description>Recent News: April 23rd 2024: &amp;ldquo;Spotlight&amp;rdquo; PLDI paper &amp;ldquo;Optimistic Stack Allocation and Dynamic Heapification for Manged Runtimes&amp;rdquo; in the spotlight of CSE department webpage. 🎉.&#xA;April 1st 2024: &amp;ldquo;Paper Acceptance at PLDI&amp;rdquo;. Paper titled &amp;ldquo;Optimistic Stack Allocation and Dynamic Heapification for Manged Runtimes&amp;rdquo; accepted at PLDI 2024 Copenhagen, Denmark June 24-28, 2024. 🎉.&#xA;March 30th 2024: &amp;ldquo;PLACID 2024&amp;rdquo; Part of the orgranizing team for &amp;ldquo;Programming Languages and Compilers in Industry Day (PLACID 2024)&amp;rdquo; organized by Department of Computer Science and Engineering at IIT Bombay.</description>
+      <description>Recent News: May 16th 2024: &amp;ldquo;Paper Acceptance at FMSD&amp;rdquo; Paper titled &amp;ldquo;Partial Program Analysis for Staged Compilation Systems&amp;rdquo; accepted for publication at FMSD 2024. 🎉.&#xA;April 23rd 2024: &amp;ldquo;Spotlight&amp;rdquo; PLDI paper &amp;ldquo;Optimistic Stack Allocation and Dynamic Heapification for Manged Runtimes&amp;rdquo; in the spotlight of CSE department webpage. 🎉.&#xA;April 1st 2024: &amp;ldquo;Paper Acceptance at PLDI&amp;rdquo;. Paper titled &amp;ldquo;Optimistic Stack Allocation and Dynamic Heapification for Manged Runtimes&amp;rdquo; accepted at PLDI 2024 Copenhagen, Denmark June 24-28, 2024.</description>
     </item>
     <item>
       <title>About Me</title>
@@ -49,7 +49,7 @@
       <link>https://adityaanand7.github.io/publications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://adityaanand7.github.io/publications/</guid>
-      <description>Legend. C: Conference; J:Journal; W: Workshop&#xA;2024 [J1]: PLDI 2024 Aditya Anand, Solai Adithya, Swapnil Rustagi, Priyam Seth, Vijay Sundaresan, Daryl Maier, V. Krishna Nandivada, and Manas Thakur. “Optimistic Stack Allocation and Dynamic Heapification for Managed Runtimes”. (To appear) In Proceedings of the ACM on Programming Languages (PLDI), Copenhagen, Denmark, June 24-28, 2024. [ Preprint ] 2023 [W1]: SERI 2023 Aditya Anand (with Manas Thakur). “Staged Static+Dynamic Partial Analysis for Java-like Languages”.</description>
+      <description>Legend. C: Conference; J:Journal; W: Workshop&#xA;2024 [J2]: FMSD 2024 Aditya Anand and Manas Thakur. “Partial Program Analysis for Staged Compilation Systems”. (To appear) Formal Methods in System Design (FMSD) Springer, 2024. [ Preprint ] [J1]: PLDI 2024 Aditya Anand, Solai Adithya, Swapnil Rustagi, Priyam Seth, Vijay Sundaresan, Daryl Maier, V. Krishna Nandivada, and Manas Thakur. “Optimistic Stack Allocation and Dynamic Heapification for Managed Runtimes”. (To appear) In Proceedings of the ACM on Programming Languages (PLDI), Copenhagen, Denmark, June 24-28, 2024.</description>
     </item>
   </channel>
 </rss>
