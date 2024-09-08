@@ -270,24 +270,32 @@
     margin: 20px 0;
     font-size: 16px;
     text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
   }
   th, td {
     border: 1px solid #ddd;
     padding: 12px;
   }
   th {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
   }
-  tr:nth-child(even) {
+  td {
     background-color: #f9f9f9;
   }
-  tr:hover {
+  tr:nth-child(even) td {
     background-color: #f1f1f1;
+  }
+  tr:hover td {
+    background-color: #e9ecef;
   }
   a {
     color: #007bff;
     text-decoration: none;
+    font-weight: bold;
   }
   a:hover {
     text-decoration: underline;
