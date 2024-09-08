@@ -264,6 +264,23 @@
     </header>
 
     <style>
+  :root {
+    --primary-color: #007bff;
+    --header-bg-color: #333;
+    --header-text-color: #fff;
+    --odd-row-bg-color: #f1f1f1;
+    --even-row-bg-color: #ffffff;
+    --hover-bg-color: #e9ecef;
+    --text-color: #333;
+    --border-color: #ddd;
+    --alt-text-color: #666;
+  }
+
+  body {
+    color: var(--text-color);
+    background-color: #f8f9fa; /* Light background color */
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -273,30 +290,39 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
+    background-color: #ffffff;
+    color: var(--text-color);
   }
+
   th, td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     padding: 12px;
   }
+
   th {
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
     text-align: center;
   }
+
   td {
-    background-color: #f9f9f9;
+    background-color: var(--even-row-bg-color);
   }
+
   tr:nth-child(even) td {
-    background-color: #f1f1f1;
+    background-color: var(--odd-row-bg-color);
   }
+
   tr:hover td {
-    background-color: #e9ecef;
+    background-color: var(--hover-bg-color);
   }
+
   a {
-    color: #007bff;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
   }
+
   a:hover {
     text-decoration: underline;
   }
@@ -335,7 +361,7 @@
     </tr>
     <tr>
       <td>4</td>
-      <td><a href="https://pldi23.sigplan.org/">PLDI</a></td>
+      <td><a href="https://pldi24.sigplan.org/">PLDI</a></td>
       <td>November</td>
       <td>A*</td>
       <td>All programming-language concepts, novel system designs, thorough empirical work, well-motivated theoretical results, and new application areas.</td>
@@ -363,7 +389,7 @@
     </tr>
     <tr>
       <td>8</td>
-      <td><a href="https://icfp23.sigplan.org/">ICFP</a></td>
+      <td><a href="https://icfp24.sigplan.org/">ICFP</a></td>
       <td>March</td>
       <td>A*</td>
       <td>Language design, implementation, software-development techniques, foundations, analysis and transformation, applications, education, etc.</td>
