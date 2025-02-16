@@ -1,0 +1,73 @@
+/* General improvements */
+body {
+    font-family: "Inter", sans-serif;  /* Modern readable font */
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px; /* Center content with a clean layout */
+    padding: 20px;
+}
+
+/* Section headings */
+h1, h2, h3, h4 {
+    color: #FFD700; /* Gold color for headings */
+    margin-top: 20px;
+    border-bottom: 2px solid #555; /* Subtle underline */
+    padding-bottom: 5px;
+}
+
+/* Links */
+a {
+    color: #1E90FF; /* Slightly softer blue */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #FF8C00; /* Orange hover effect */
+}
+
+/* Professional Service Section */
+.professional-service {
+    background: #222; /* Dark background for contrast */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.professional-service h4 {
+    color: #FFA500; /* Orange heading */
+}
+
+.professional-service ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.professional-service li {
+    margin-bottom: 10px;
+}
+
+/* Academic Experience Section */
+.academic-experience {
+    background: #282828; /* Slightly lighter dark background */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.academic-experience li {
+    margin-bottom: 10px;
+}
+
+/* Icons for sections */
+h4::before {
+    content: "📌 ";
+}
+
+.professional-service h4::before {
+    content: "📜 ";
+}
+
+.academic-experience h4::before {
+    content: "🎓 ";
+}
