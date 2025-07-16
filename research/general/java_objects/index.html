@@ -292,7 +292,6 @@ TLAB.top += object_size;
 <ul>
 <li>The JVM tries to allocate a <strong>new TLAB</strong> for the thread (again from Eden).</li>
 <li>If Eden is also full, <strong>garbage collection</strong> may be triggered to free up space.</li>
-<li>If allocation in a TLAB is not possible (e.g., the object is too large for the remaining TLAB space, or a new TLAB cannot be allocated), the JVM falls back to the <strong>slow path</strong>.</li>
 </ul>
 <h3 id="ii-global-allocation-if-tlab-is-full-or-disabled">
   (II) Global Allocation (if TLAB is full or disabled)
@@ -362,7 +361,7 @@ TLAB.top += object_size;
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>This is a powerful optimization performed by the JIT compiler (both <strong>HotSpot</strong> and <strong>OpenJ9</strong> extensively use this).</p>
+<p>This is a powerful optimization performed by the JIT compiler.</p>
 <ul>
 <li>
 <p>The JIT compiler performs <strong>escape analysis</strong> to determine if an object&rsquo;s lifetime is confined to a single method or thread. If the object never &ldquo;escapes&rdquo; the method it&rsquo;s created in (i.e., its reference is not returned, stored in a field, or passed to other threads), then the JVM might apply further optimizations.</p>
