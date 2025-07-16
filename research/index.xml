@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© Aditya Anand 2023. &lt;a href=&#39;https://adityaanand7.github.io/privacy&#39;&gt;Privacy policy&lt;/a&gt;.</copyright>
-    <lastBuildDate>Tue, 20 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://adityaanand7.github.io/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Invisible Steps: How Java Really Allocates Your Objects</title>
+      <link>https://adityaanand7.github.io/research/general/java_objects/</link>
+      <pubDate>Wed, 16 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://adityaanand7.github.io/research/general/java_objects/</guid>
+      <description>&lt;p&gt;In Java, when you allocate an object using the &lt;code&gt;new&lt;/code&gt; keyword, a complex series of steps takes place behind the scenes involving &lt;strong&gt;bytecode interpretation or JIT compilation, memory management, and synchronization with the garbage collector&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-new-bytecode-instruction&#34;&gt;&#xA;  1. &lt;code&gt;new&lt;/code&gt; Bytecode Instruction&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1-new-bytecode-instruction&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;When you write:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;A obj &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;new&lt;/span&gt; A();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The Java compiler compiles this to JVM bytecode like:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;new A           // allocate memory, pushes uninitialized object reference onto stack&#xA;dup             // duplicates the reference, one for the constructor, one for the variable &amp;#39;obj&amp;#39;&#xA;invokespecial   // calls the constructor (e.g., A.&amp;lt;init&amp;gt;())&#xA;astore_1        // stores the object reference into local variable &amp;#39;obj&amp;#39;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This sequence of bytecodes is then executed by either the interpreter or the Just-In-Time (JIT) compiled code.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Write Barriers in JIT Compilers</title>
       <link>https://adityaanand7.github.io/research/general/write_barriers/</link>

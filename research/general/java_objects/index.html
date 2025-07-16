@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  The Invisible Steps: How Java Really Allocates Your Objects · Aditya Anand
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="description" content="In Java, when you allocate an object using the new keyword, a complex series of steps takes place behind the scenes involving bytecode interpretation or JIT compilation, memory management, and synchronization with the garbage collector.
+
+  1. new Bytecode Instruction
+  
+    
+    Link to heading
+  
+
+When you write:
+A obj = new A();
+The Java compiler compiles this to JVM bytecode like:
+new A           // allocate memory, pushes uninitialized object reference onto stack
+dup             // duplicates the reference, one for the constructor, one for the variable &#39;obj&#39;
+invokespecial   // calls the constructor (e.g., A.&lt;init&gt;())
+astore_1        // stores the object reference into local variable &#39;obj&#39;
+This sequence of bytecodes is then executed by either the interpreter or the Just-In-Time (JIT) compiled code.">
+<meta name="keywords" content="">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Invisible Steps: How Java Really Allocates Your Objects">
+  <meta name="twitter:description" content="In Java, when you allocate an object using the new keyword, a complex series of steps takes place behind the scenes involving bytecode interpretation or JIT compilation, memory management, and synchronization with the garbage collector.
+1. new Bytecode Instruction Link to heading When you write:
+A obj = new A(); The Java compiler compiles this to JVM bytecode like:
+new A // allocate memory, pushes uninitialized object reference onto stack dup // duplicates the reference, one for the constructor, one for the variable &#39;obj&#39; invokespecial // calls the constructor (e.g., A.&lt;init&gt;()) astore_1 // stores the object reference into local variable &#39;obj&#39; This sequence of bytecodes is then executed by either the interpreter or the Just-In-Time (JIT) compiled code.">
+
+<meta property="og:url" content="https://adityaanand7.github.io/research/general/java_objects/">
+  <meta property="og:site_name" content="Aditya Anand">
+  <meta property="og:title" content="The Invisible Steps: How Java Really Allocates Your Objects">
+  <meta property="og:description" content="In Java, when you allocate an object using the new keyword, a complex series of steps takes place behind the scenes involving bytecode interpretation or JIT compilation, memory management, and synchronization with the garbage collector.
+1. new Bytecode Instruction Link to heading When you write:
+A obj = new A(); The Java compiler compiles this to JVM bytecode like:
+new A // allocate memory, pushes uninitialized object reference onto stack dup // duplicates the reference, one for the constructor, one for the variable &#39;obj&#39; invokespecial // calls the constructor (e.g., A.&lt;init&gt;()) astore_1 // stores the object reference into local variable &#39;obj&#39; This sequence of bytecodes is then executed by either the interpreter or the Just-In-Time (JIT) compiled code.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="research">
+    <meta property="article:published_time" content="2025-07-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-16T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="https://adityaanand7.github.io/research/general/java_objects/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.1202d22faa9edd344afba38f0112766084d4418f8a84fef8cf58a2a853ad88c6.css" integrity="sha256-EgLSL6qe3TRK&#43;6OPARJ2YITUQY&#43;KhP74z1iiqFOtiMY=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/aa-logo.png" sizes="16x16">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css">
+
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LPMMR77F0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3LPMMR77F0');
+</script>
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://adityaanand7.github.io/">
+      Aditya Anand
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/publications">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/outreach">Outreach</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/research">Research</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/news">Recent News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/pdf/aditya-cv.pdf">CV</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://adityaanand7.github.io/research/general/java_objects/">
+          The Invisible Steps: How Java Really Allocates Your Objects
+        </a>
+      </h1>
+    </header>
+
+    <p>In Java, when you allocate an object using the <code>new</code> keyword, a complex series of steps takes place behind the scenes involving <strong>bytecode interpretation or JIT compilation, memory management, and synchronization with the garbage collector</strong>.</p>
+<h2 id="1-new-bytecode-instruction">
+  1. <code>new</code> Bytecode Instruction
+  <a class="heading-link" href="#1-new-bytecode-instruction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>When you write:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>A obj <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> A();
+</span></span></code></pre></div><p>The Java compiler compiles this to JVM bytecode like:</p>
+<pre tabindex="0"><code>new A           // allocate memory, pushes uninitialized object reference onto stack
+dup             // duplicates the reference, one for the constructor, one for the variable &#39;obj&#39;
+invokespecial   // calls the constructor (e.g., A.&lt;init&gt;())
+astore_1        // stores the object reference into local variable &#39;obj&#39;
+</code></pre><p>This sequence of bytecodes is then executed by either the interpreter or the Just-In-Time (JIT) compiled code.</p>
+<hr />
+<h2 id="2-class-metadata-lookup">
+  2. Class Metadata Lookup
+  <a class="heading-link" href="#2-class-metadata-lookup">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The JVM looks up the <strong>class metadata</strong> (loaded in the method area or metaspace, depending on the JVM) for class <code>A</code>. This metadata includes:</p>
+<ul>
+<li><strong>Size of the object</strong>: How much memory is needed for an instance of <code>A</code>.</li>
+<li><strong>Field layout</strong>: Where each field is located within the object&rsquo;s memory.</li>
+<li><strong>Pointer to the class vtable (virtual method table)</strong>: Used for dynamic dispatch of methods.</li>
+<li><strong>Constructor information</strong>: Details about how to initialize the object.</li>
+</ul>
+<p><strong>Note:</strong> If the class isn&rsquo;t loaded yet, it triggers <strong>class loading, linking, and initialization</strong>. This involves:</p>
+<ul>
+<li><strong>Loading:</strong> Finding the <code>.class</code> file and loading its bytecode.</li>
+<li><strong>Linking:</strong>
+<ul>
+<li><strong>Verification:</strong> Ensuring the bytecode is valid and safe.</li>
+<li><strong>Preparation:</strong> Allocating memory for static fields and initializing them to default values.</li>
+<li><strong>Resolution:</strong> Replacing symbolic references with direct references (e.g., method calls to actual memory addresses).</li>
+</ul>
+</li>
+<li><strong>Initialization:</strong> Executing the class&rsquo;s static initializers and static blocks.</li>
+</ul>
+<hr />
+<h2 id="3-memory-allocation">
+  3. Memory Allocation
+  <a class="heading-link" href="#3-memory-allocation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>After getting information about class A. The actual memory for the object is allocated <strong>in the heap</strong>, usually in the <strong>young generation (Eden space)</strong>. There are two common strategies:</p>
+<h3 id="i-thread-local-allocation-buffers-tlabs">
+  (I) Thread-Local Allocation Buffers (TLABs)
+  <a class="heading-link" href="#i-thread-local-allocation-buffers-tlabs">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>In a multi-threaded JVM environment, if all threads were to allocate memory directly into a <strong>shared heap</strong>, it would require <strong>synchronization (locking)</strong> on each allocation to avoid conflicts (i.e., multiple threads writing to the same region of memory). This synchronization would be a significant performance bottleneck.
+A <strong>TLAB</strong> is a small chunk of the heap that the JVM assigns <strong>exclusively to a single thread</strong>. The thread can then allocate memory within its TLAB <strong>without any synchronization</strong>, just by bumping a pointer.</p>
+<h4 id="tlab-assignment">
+  TLAB Assignment:
+  <a class="heading-link" href="#tlab-assignment">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>When a thread starts or when it needs to allocate memory:</p>
+<ul>
+<li>The JVM allocates a fixed-size memory region from the heap (usually from the <strong>Eden</strong> space in the Young Generation)</li>
+<li>This memory region becomes the <strong>TLAB</strong> for that thread.</li>
+</ul>
+<h4 id="allocation-inside-tlab">
+  Allocation Inside TLAB:
+  <a class="heading-link" href="#allocation-inside-tlab">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Now the thread can allocate objects by <strong>incrementing a pointer</strong>:</p>
+<pre tabindex="0"><code>// Pseudo-mechanism
+object_address = TLAB.top;
+TLAB.top += object_size;
+</code></pre><ul>
+<li>No locks needed.</li>
+<li>Super-fast — it&rsquo;s just a pointer move.</li>
+</ul>
+<h4 id="tlab-exhaustion">
+  TLAB Exhaustion:
+  <a class="heading-link" href="#tlab-exhaustion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>If the thread&rsquo;s TLAB runs out of space:</p>
+<ul>
+<li>The JVM tries to allocate a <strong>new TLAB</strong> for the thread (again from Eden).</li>
+<li>If Eden is also full, <strong>garbage collection</strong> may be triggered to free up space.</li>
+<li>If allocation in a TLAB is not possible (e.g., the object is too large for the remaining TLAB space, or a new TLAB cannot be allocated), the JVM falls back to the <strong>slow path</strong>.</li>
+</ul>
+<h3 id="ii-global-allocation-if-tlab-is-full-or-disabled">
+  (II) Global Allocation (if TLAB is full or disabled)
+  <a class="heading-link" href="#ii-global-allocation-if-tlab-is-full-or-disabled">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>If a TLAB is exhausted and a new one cannot be obtained, or if the object being allocated is larger than the maximum TLAB size, or if TLABs are disabled (which is rare in modern JVMs), the JVM falls back to a <strong>synchronized heap allocation</strong> path.</li>
+<li>This involves acquiring a global heap lock or using atomic operations (like Compare-And-Swap, CAS) to ensure thread safety when multiple threads try to allocate directly from the shared heap. This is significantly slower than TLAB allocation.</li>
+</ul>
+<p>Note :Most JVMs (like <strong>HotSpot</strong>, <strong>OpenJ9</strong>) use <strong>TLABs</strong> to allow fast object allocation without locking. Each thread gets a small chunk of the heap, and the <code>new</code> operation simply bumps a pointer inside the TLAB — <strong>very fast</strong>.</p>
+<hr />
+<h2 id="4-zeroing-and-initialization">
+  4. Zeroing and Initialization
+  <a class="heading-link" href="#4-zeroing-and-initialization">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>After memory is successfully allocated:</p>
+<ul>
+<li>The memory for the new object is <strong>zeroed out</strong> (all bits set to 0). This means primitive fields are set to their default values (e.g., <code>0</code> for <code>int</code>, <code>0.0</code> for <code>double</code>, <code>false</code> for <code>boolean</code>), and reference fields are set to <code>null</code>. This is a security and correctness measure, preventing uninitialized memory from being exposed to Java code.</li>
+<li>The <strong>object header</strong> is initialized. This header contains crucial metadata about the object, including:
+<ul>
+<li><strong>Mark Word:</strong> Stores hash code, GC age, and locking information (used for <code>synchronized</code> blocks and biased locking).</li>
+<li><strong>Class Pointer (Klass Pointer in HotSpot, Type Pointer in OpenJ9):</strong> A pointer to the object&rsquo;s class metadata in the Method Area/Metaspace, allowing the JVM to know the object&rsquo;s type, its fields, and methods.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="5-constructor-invocation">
+  5. Constructor Invocation
+  <a class="heading-link" href="#5-constructor-invocation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>The <code>invokespecial</code> bytecode instruction, which was placed on the stack by the compiler, is now executed. This calls the actual Java constructor of the class.</li>
+<li>The constructor then initializes the fields with programmer-defined values, overriding the default zeroed values. For example, if a field <code>int x = 10;</code> is declared, the constructor will set <code>x</code> to <code>10</code>.</li>
+</ul>
+<hr />
+<h2 id="6-write-barrier-optional">
+  6. Write Barrier (Optional)
+  <a class="heading-link" href="#6-write-barrier-optional">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In some modern garbage collectors (like G1, ZGC, Shenandoah in <strong>HotSpot</strong>; various concurrent GC policies in <strong>OpenJ9</strong>), a <strong>write barrier</strong> may be applied when storing object references.</p>
+<ul>
+<li>
+<p>A write barrier is a small piece of code inserted by the JIT compiler before or after an object reference is written to a field. Its purpose is to track changes in the object graph that are relevant to concurrent garbage collection algorithms.</p>
+</li>
+<li>
+<p>For example, in generational garbage collectors, write barriers are used to maintain &ldquo;remembered sets&rdquo; or &ldquo;card tables,&rdquo; which track references from older generation objects to younger generation objects. This helps the GC efficiently find roots for minor collections without scanning the entire heap. In concurrent collectors like ZGC or Shenandoah, write barriers are used to ensure the consistency of the heap view during concurrent marking or compaction phases.</p>
+</li>
+</ul>
+<p><a href="https://adityaanand7.github.io/research/general/write_barriers/"  class="external-link" target="_blank" rel="noopener">More Details</a></p>
+<hr />
+<h2 id="7-escape-analysis--stack-allocation-optimization">
+  7. Escape Analysis &amp; Stack Allocation (Optimization)
+  <a class="heading-link" href="#7-escape-analysis--stack-allocation-optimization">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This is a powerful optimization performed by the JIT compiler (both <strong>HotSpot</strong> and <strong>OpenJ9</strong> extensively use this).</p>
+<ul>
+<li>
+<p>The JIT compiler performs <strong>escape analysis</strong> to determine if an object&rsquo;s lifetime is confined to a single method or thread. If the object never &ldquo;escapes&rdquo; the method it&rsquo;s created in (i.e., its reference is not returned, stored in a field, or passed to other threads), then the JVM might apply further optimizations.</p>
+</li>
+<li>
+<p>If an object is determined to be &ldquo;non-escaping,&rdquo; the JVM can employ <strong>scalar replacement</strong> or <strong>stack allocation</strong>:</p>
+<ul>
+<li>
+<p><strong>Scalar Replacement:</strong> Instead of allocating the entire object on the heap, the JIT compiler might break the object down into its constituent fields (scalars) and treat them as independent local variables. These scalar variables can then be allocated directly on the thread&rsquo;s stack. This entirely avoids heap allocation, reducing GC pressure and improving cache locality.</p>
+</li>
+<li>
+<p><strong>Stack Allocation:</strong> In some cases, the entire object <em>might</em> be allocated on the stack. In those cases instead of breaking the object whole object is allocated on the stack frame of its allocating method. <strong>OpenJ9</strong> extensively uses this optimization.</p>
+</li>
+</ul>
+</li>
+</ul>
+
+  </article>
+</section>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+    
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
