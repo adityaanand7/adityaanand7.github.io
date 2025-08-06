@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=46833&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  PL and Compilers Research · Aditya Anand
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="description" content="
+
+  Research Articles
+  
+    
+      
+        The Invisible Steps: How Java Really Allocates Your Objects
+      
+      July 16, 2025
+    
+&lt;div class=&quot;research-entry&quot;&gt;
+  &lt;div class=&quot;entry-title&quot;&gt;
+    &lt;a href=&quot;/research/research-articles/write_barriers/&quot;&gt;Write Barriers in JIT Compilers&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;entry-date&quot;&gt;February 20, 2024&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;research-entry&quot;&gt;
+  &lt;div class=&quot;entry-title&quot;&gt;
+    &lt;a href=&quot;/research/research-articles/conference/&quot;&gt;Conferences, Journals and Workshops (For PL and Compilers)&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;entry-date&quot;&gt;July 15, 2023&lt;/div&gt;
+&lt;/div&gt;
+
+  
+
+
+  Technical Guides
+  
+    
+      
+        Inside Technical Guides
+      
+      February 20, 2024
+    
+  
+">
+<meta name="keywords" content="">
+<meta name="fediverse:creator" content="" />
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PL and Compilers Research">
+  <meta name="twitter:description" content="Research Articles The Invisible Steps: How Java Really Allocates Your Objects July 16, 2025 &lt;div class=&#34;research-entry&#34;&gt; &lt;div class=&#34;entry-title&#34;&gt; &lt;a href=&#34;/research/research-articles/write_barriers/&#34;&gt;Write Barriers in JIT Compilers&lt;/a&gt; &lt;/div&gt; &lt;div class=&#34;entry-date&#34;&gt;February 20, 2024&lt;/div&gt; &lt;/div&gt; &lt;div class=&#34;research-entry&#34;&gt; &lt;div class=&#34;entry-title&#34;&gt; &lt;a href=&#34;/research/research-articles/conference/&#34;&gt;Conferences, Journals and Workshops (For PL and Compilers)&lt;/a&gt; &lt;/div&gt; &lt;div class=&#34;entry-date&#34;&gt;July 15, 2023&lt;/div&gt; &lt;/div&gt; Technical Guides Inside Technical Guides February 20, 2024">
+
+<meta property="og:url" content="http://localhost:46833/research/quick-links/_index-copy/">
+  <meta property="og:site_name" content="Aditya Anand">
+  <meta property="og:title" content="PL and Compilers Research">
+  <meta property="og:description" content="Research Articles The Invisible Steps: How Java Really Allocates Your Objects July 16, 2025 &lt;div class=&#34;research-entry&#34;&gt; &lt;div class=&#34;entry-title&#34;&gt; &lt;a href=&#34;/research/research-articles/write_barriers/&#34;&gt;Write Barriers in JIT Compilers&lt;/a&gt; &lt;/div&gt; &lt;div class=&#34;entry-date&#34;&gt;February 20, 2024&lt;/div&gt; &lt;/div&gt; &lt;div class=&#34;research-entry&#34;&gt; &lt;div class=&#34;entry-title&#34;&gt; &lt;a href=&#34;/research/research-articles/conference/&#34;&gt;Conferences, Journals and Workshops (For PL and Compilers)&lt;/a&gt; &lt;/div&gt; &lt;div class=&#34;entry-date&#34;&gt;July 15, 2023&lt;/div&gt; &lt;/div&gt; Technical Guides Inside Technical Guides February 20, 2024">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="research">
+
+
+
+
+<link rel="canonical" href="http://localhost:46833/research/quick-links/_index-copy/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/aa-logo.png" sizes="16x16">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css">
+
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LPMMR77F0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3LPMMR77F0');
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Aditya Anand",
+  "url": "https://adityaanand7.github.io",
+  "image": "https://adityaanand7.github.io/images/me.png",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "IIT Bombay"
+  },
+  "sameAs": [
+    "https://github.com/adityaanand7",
+    "https://www.linkedin.com/in/adityaanand7",
+    "https://scholar.google.com/citations?user=2FSbVdMAAAAJ&hl=en",
+    "http://orcid.org/0000-0003-3752-3908"
+  ]
+}
+</script>
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:46833/">
+      Aditya Anand
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/publications">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/outreach">Outreach</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/research">Research</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/news">Recent News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/pdf/aditya-cv.pdf">CV</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:46833/research/quick-links/_index-copy/">
+          PL and Compilers Research
+        </a>
+      </h1>
+    </header>
+
+    <style>
+.research-section {
+  padding-left: 1em;
+  margin-bottom: 2em;
+}
+
+.research-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75em;
+  padding-right: 1em;
+}
+
+.entry-title a {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.entry-date {
+  text-align: right;
+  min-width: 10em; /* Adjust for consistent right alignment */
+  white-space: nowrap;
+}
+</style>
+<details open>
+  <summary><strong>Research Articles</strong></summary>
+  <div class="research-section">
+    <div class="research-entry">
+      <div class="entry-title">
+        <a href="/research/research-articles/java_objects/">The Invisible Steps: How Java Really Allocates Your Objects</a>
+      </div>
+      <div class="entry-date">July 16, 2025</div>
+    </div>
+<pre><code>&lt;div class=&quot;research-entry&quot;&gt;
+  &lt;div class=&quot;entry-title&quot;&gt;
+    &lt;a href=&quot;/research/research-articles/write_barriers/&quot;&gt;Write Barriers in JIT Compilers&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;entry-date&quot;&gt;February 20, 2024&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;research-entry&quot;&gt;
+  &lt;div class=&quot;entry-title&quot;&gt;
+    &lt;a href=&quot;/research/research-articles/conference/&quot;&gt;Conferences, Journals and Workshops (For PL and Compilers)&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;entry-date&quot;&gt;July 15, 2023&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</details>
+<details>
+  <summary><strong>Technical Guides</strong></summary>
+  <div class="research-section">
+    <div class="research-entry">
+      <div class="entry-title">
+        <a href="/research/technical-guides/tech/">Inside Technical Guides</a>
+      </div>
+      <div class="entry-date">February 20, 2024</div>
+    </div>
+  </div>
+</details>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+    
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

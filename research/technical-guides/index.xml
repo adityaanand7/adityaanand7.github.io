@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PL and Compilers Research on Aditya Anand</title>
+    <link>https://adityaanand7.github.io/research/technical-guides/</link>
+    <description>Recent content in PL and Compilers Research on Aditya Anand</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>© Aditya Anand 2023. &lt;a href=&#39;https://adityaanand7.github.io/privacy&#39;&gt;Privacy policy&lt;/a&gt;.</copyright>
+    <lastBuildDate>Sat, 15 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://adityaanand7.github.io/research/technical-guides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up OpenJ9 on the Server</title>
+      <link>https://adityaanand7.github.io/research/technical-guides/setup_openj9/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://adityaanand7.github.io/research/technical-guides/setup_openj9/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
