@@ -276,6 +276,25 @@ details {
 .references-entry a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 600px) {
+  .research-entry {
+    flex-direction: column;
+    align-items: flex-start; /* left-align items when stacked */
+    gap: 0.25em; /* smaller gap between date and title */
+  }
+
+  .entry-date {
+    width: auto; /* remove fixed width */
+    text-align: left;
+    padding-left: 0; /* remove extra padding */
+  }
+
+  .references-entry {
+    padding-left: 0.6cm; /* optional: align Interesting Reads items too */
+  }
+}
+
 </style>
 <!-- === Research Articles === -->
 <details open>
