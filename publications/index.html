@@ -229,8 +229,8 @@
 .tab {
   overflow: hidden;
   border-bottom: 1px solid #ccc;
+  margin-bottom: 0.1em;
 }
-
 .tab button {
   background-color: #787878;
   border: none;
@@ -239,21 +239,21 @@
   padding: 14px 16px;
   transition: 0.3s;
   font-size: 17px;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  margin-right: 4px;
 }
-
 .tab button:hover {
   background-color:rgb(144, 162, 167);
 }
-
 .tab button.active {
   background-color:rgb(62, 165, 212);
 }
-
 .tabcontent {
   display: none;
   padding: 6px 12px;
   border-top: none;
-}
+}}
 </style>
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'Publications')">Publications</button>

@@ -12,50 +12,33 @@
 
 <meta name="description" content="
 
-
   Research Articles
   
-    July 16, 2025
-    
-      The Invisible Steps: How Java Really Allocates Your Objects
-    
+    The Invisible Steps: How Java Really Allocates Your Objects
+    July 16, 2025 · Research Article
   
   
-    February 20, 2024
-    
-      Write Barriers in JIT Compilers
-    
+    Write Barriers in JIT Compilers
+    February 20, 2024 · Research Article
   
   
-    July 15, 2023
-    
-      Conferences, Journals and Workshops (For PL and Compilers)
-    
+    Conferences, Journals and Workshops (For PL and Compilers)
+    July 15, 2023 · Research Article
   
-
-
-
   Technical Guides
   
-    August 10, 2025
-    
-      Setting up OpenJ9 on the Server
-      
-    
+    Setting up OpenJ9 on the Server
+    August 10, 2025 · Technical Guide
   
-
-
-
-   Interesting Reads 
+  Interesting Reads
   
-    1. What is a Bug
+    What is a Bug
   
   
-    2. Why Are There So Many Programming Languages
+    Why Are There So Many Programming Languages
   
   
-    3. In Defense of Soundiness:
-A Manifesto
+    In Defense of Soundiness: A Manifesto
   
 ">
 <meta name="keywords" content="">
@@ -64,12 +47,12 @@ A Manifesto
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="PL and Compilers Research">
-  <meta name="twitter:description" content="Research Articles July 16, 2025 The Invisible Steps: How Java Really Allocates Your Objects February 20, 2024 Write Barriers in JIT Compilers July 15, 2023 Conferences, Journals and Workshops (For PL and Compilers) Technical Guides August 10, 2025 Setting up OpenJ9 on the Server Interesting Reads 1. What is a Bug 2. Why Are There So Many Programming Languages 3. In Defense of Soundiness: A Manifesto">
+  <meta name="twitter:description" content="Research Articles The Invisible Steps: How Java Really Allocates Your Objects July 16, 2025 · Research Article Write Barriers in JIT Compilers February 20, 2024 · Research Article Conferences, Journals and Workshops (For PL and Compilers) July 15, 2023 · Research Article Technical Guides Setting up OpenJ9 on the Server August 10, 2025 · Technical Guide Interesting Reads What is a Bug Why Are There So Many Programming Languages In Defense of Soundiness: A Manifesto">
 
 <meta property="og:url" content="https://adityaanand7.github.io/research/">
   <meta property="og:site_name" content="Aditya Anand">
   <meta property="og:title" content="PL and Compilers Research">
-  <meta property="og:description" content="Research Articles July 16, 2025 The Invisible Steps: How Java Really Allocates Your Objects February 20, 2024 Write Barriers in JIT Compilers July 15, 2023 Conferences, Journals and Workshops (For PL and Compilers) Technical Guides August 10, 2025 Setting up OpenJ9 on the Server Interesting Reads 1. What is a Bug 2. Why Are There So Many Programming Languages 3. In Defense of Soundiness: A Manifesto">
+  <meta property="og:description" content="Research Articles The Invisible Steps: How Java Really Allocates Your Objects July 16, 2025 · Research Article Write Barriers in JIT Compilers February 20, 2024 · Research Article Conferences, Journals and Workshops (For PL and Compilers) July 15, 2023 · Research Article Technical Guides Setting up OpenJ9 on the Server August 10, 2025 · Technical Guide Interesting Reads What is a Bug Why Are There So Many Programming Languages In Defense of Soundiness: A Manifesto">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
 
@@ -231,118 +214,92 @@ A Manifesto
     </h1>
   </header>
   <style>
-details {
-  margin-bottom: 2em;
+.blog-list {
+  max-width: 700px;
+  margin: 2em auto 0 auto;
+  padding: 0 1em;
 }
-
-.research-entry {
+.blog-category {
+  font-size: 1.18em;
+  font-weight: 700;
+  color: #2d6a4f;
+  margin: 1.2em 0 0.7em 0;
+  letter-spacing: 0.5px;
+  padding-left: 0;
+}
+.blog-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  margin-bottom: 1.2em;
+  padding: 1.2em 1.2em 1em 1.2em;
   display: flex;
-  gap: 2em;
-  align-items: baseline;
-  padding-left: 1.5em;
-  margin-bottom: 0.75em;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
 }
-
-.entry-date {
-  width: 10em; /* fixed width for consistent alignment */
-  text-align: right;
-  white-space: nowrap;
-  flex-shrink: 0;
+.blog-card:hover {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
 }
-
-.entry-title a {
-  font-weight: bold;
+.blog-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #007acc;
+  margin-bottom: 0.3em;
   text-decoration: none;
-  color: inherit;
+  transition: color 0.2s;
 }
-
-.entry-title a:hover {
+.blog-title:hover {
+  color: #005fa3;
   text-decoration: underline;
 }
-
-.references-entry {
-  display: flex;
-  justify-content: left;
-  padding-left: 8.5em;
-  margin-bottom: 0.55em;
+.blog-meta {
+  font-size: 0.97em;
+  color: #888;
+  margin-bottom: 0.5em;
 }
-
-.references-entry a {
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
+.blog-desc {
+  display: none;
 }
-
-.references-entry a:hover {
-  text-decoration: underline;
-}
-
 @media (max-width: 600px) {
-  .research-entry {
-    flex-direction: column;
-    align-items: flex-start; /* left-align items when stacked */
-    gap: 0.25em; /* smaller gap between date and title */
+  .blog-list {
+    max-width: 98vw;
+    padding: 0 0.2em;
   }
-
-  .entry-date {
-    width: auto; /* remove fixed width */
-    text-align: left;
-    padding-left: 0; /* remove extra padding */
-  }
-
-  .references-entry {
-    padding-left: 0.6cm; /* optional: align Interesting Reads items too */
+  .blog-card {
+    padding: 0.8em 0.5em 0.7em 0.5em;
   }
 }
-
 </style>
-<!-- === Research Articles === -->
-<details open>
-  <summary><strong>Research Articles</strong></summary>
-  <div class="research-entry">
-    <div class="entry-date">July 16, 2025</div>
-    <div class="entry-title">
-      <a href="/research/research-articles/java_objects/">The Invisible Steps: How Java Really Allocates Your Objects</a>
-    </div>
+<div class="blog-list">
+  <div class="blog-category">Research Articles</div>
+  <div class="blog-card">
+    <a class="blog-title" href="/research/research-articles/java_objects/">The Invisible Steps: How Java Really Allocates Your Objects</a>
+    <div class="blog-meta">July 16, 2025 · Research Article</div>
   </div>
-  <div class="research-entry">
-    <div class="entry-date">February 20, 2024</div>
-    <div class="entry-title">
-      <a href="/research/research-articles/write_barriers/">Write Barriers in JIT Compilers</a>
-    </div>
+  <div class="blog-card">
+    <a class="blog-title" href="/research/research-articles/write_barriers/">Write Barriers in JIT Compilers</a>
+    <div class="blog-meta">February 20, 2024 · Research Article</div>
   </div>
-  <div class="research-entry">
-    <div class="entry-date">July 15, 2023</div>
-    <div class="entry-title">
-      <a href="/research/research-articles/conference/">Conferences, Journals and Workshops (For PL and Compilers)</a>
-    </div>
+  <div class="blog-card">
+    <a class="blog-title" href="/research/research-articles/conference/">Conferences, Journals and Workshops (For PL and Compilers)</a>
+    <div class="blog-meta">July 15, 2023 · Research Article</div>
   </div>
-</details>
-<!-- === Technical Guides === -->
-<details open>
-  <summary><strong>Technical Guides</strong></summary>
-  <div class="research-entry">
-    <div class="entry-date">August 10, 2025</div>
-    <div class="entry-title">
-      <a href="/research/technical-guides/setup_openj9/">Setting up OpenJ9 on the Server</a>
-      <!-- <a href="#">Setting up OpenJ9 on Server (Upcoming)</a> -->
-    </div>
+  <div class="blog-category">Technical Guides</div>
+  <div class="blog-card">
+    <a class="blog-title" href="/research/technical-guides/setup_openj9/">Setting up OpenJ9 on the Server</a>
+    <div class="blog-meta">August 10, 2025 · Technical Guide</div>
   </div>
-</details>
-<!-- === Interesting Reads   === -->
-<details open>
-  <summary><strong> Interesting Reads </strong></summary>
-  <div class="references-entry">
-    <a href="https://cacm.acm.org/opinion/what-is-a-bug/">1. What is a Bug</a>
+  <div class="blog-category">Interesting Reads</div>
+  <div class="blog-card">
+    <a class="blog-title" href="https://cacm.acm.org/opinion/what-is-a-bug/">What is a Bug</a>
   </div>
-  <div class="references-entry">
-    <a href="https://cacm.acm.org/blogcacm/why-are-there-so-many-programming-languages/">2. Why Are There So Many Programming Languages</a>
+  <div class="blog-card">
+    <a class="blog-title" href="https://cacm.acm.org/blogcacm/why-are-there-so-many-programming-languages/">Why Are There So Many Programming Languages</a>
   </div>
-  <div class="references-entry">
-    <a href="https://dl.acm.org/doi/pdf/10.1145/2644805">3. In Defense of Soundiness:
-A Manifesto</a>
+  <div class="blog-card">
+    <a class="blog-title" href="https://dl.acm.org/doi/pdf/10.1145/2644805">In Defense of Soundiness: A Manifesto</a>
   </div>
-</details>
+</div>
 
   <ul>
     
