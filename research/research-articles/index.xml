@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© Aditya Anand 2023. &lt;a href=&#39;https://adityaanand7.github.io/privacy&#39;&gt;Privacy policy&lt;/a&gt;.</copyright>
-    <lastBuildDate>Wed, 16 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://adityaanand7.github.io/research/research-articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homoiconicity: Code as Data</title>
+      <link>https://adityaanand7.github.io/research/research-articles/homoiconicity/</link>
+      <pubDate>Thu, 02 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://adityaanand7.github.io/research/research-articles/homoiconicity/</guid>
+      <description>&lt;p&gt;Most programming languages draw a strict line between &lt;strong&gt;code&lt;/strong&gt; (the&#xA;instructions that tell the computer what to do) and &lt;strong&gt;data&lt;/strong&gt; (the values&#xA;the program manipulates).&lt;/p&gt;&#xA;&lt;p&gt;But in some languages&amp;mdash;most famously &lt;strong&gt;Lisp&lt;/strong&gt;&amp;mdash;this boundary is&#xA;blurred.&lt;/p&gt;&#xA;&lt;p&gt;The property that allows code to be represented and manipulated as data&#xA;structures within the language is called &lt;strong&gt;homoiconicity&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;&lt;h2 id=&#34;1-what-does-homoiconicity-mean&#34;&gt;&#xA;  1. What Does Homoiconicity Mean?&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1-what-does-homoiconicity-mean&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;The word comes from Greek roots:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The Invisible Steps: How Java Really Allocates Your Objects</title>
       <link>https://adityaanand7.github.io/research/research-articles/java_objects/</link>
