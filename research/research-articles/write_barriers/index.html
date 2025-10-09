@@ -47,7 +47,7 @@ The JIT compiler is required to insert a write barrier in the code which it gene
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.e927f7340e309d76dcb8fda85f1531ae7341aa9cd0b7f3ab77885dae77b1a0a2.css" integrity="sha256-6Sf3NA4wnXbcuP2oXxUxrnNBqpzQt/Ord4hdrnexoKI=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.min.a38307e5862a7b0d7417d91e21e15185fb9466f7c137691d5c4d82198bd7cd06.css" integrity="sha256-o4MH5YYqew10F9keIeFRhfuUZvfBN2kdXE2CGYvXzQY=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -212,12 +212,23 @@ The JIT compiler is required to insert a write barrier in the code which it gene
 <p><code>Generational Check:</code> The generational garbage collector divides the heap in two part; a young generation space where the newly created object resides(GC happens frequently) and a tenured space (old generation) where long-lived objects resides (GC doesn&rsquo;t happen frequently). (Note that the young generation is further divided into one Eden and two Survivor spaces). And now for store statement like (<code>a.f=b</code>) where <code>b</code> is in young generation and <code>a</code> is in old generation, the GC should remember to scan the object (<code>a</code>) stored in old generation.</p>
 </li>
 <li>
-<p><code>Heap Object Check:</code> While executing JIT compiled code there is possibility that an object might get allocated on method&rsquo;s stack-frame. There can be situations where we can not determine whether the object is on heap or stack, so a runtime check is required to determine the same.
-Note: A stack-allocated object doesn&rsquo;t required a write barrier check.</p>
+<p><code>Heap Object Check:</code> While executing JIT compiled code there is possibility that an object might get allocated on method&rsquo;s stack-frame. There can be situations where we can not determine at compile time whether the object is on heap or stack.
+For eg: In the below code <code>obj</code> can point to a heap as well stack object based on the runtime condition and a runtime check is required to determine the same.</p>
 </li>
-<li>
-<p><code>Concurrent Mark Check:</code> Marking set of objects for garbage collection can be performed concurrently. A special thread can be used to just mark the set of live objects. However if an object <code>b</code> is stored into an object <code>a</code> that has already been scanned by the concurrent thread then object <code>a</code> need to be rescanned to ensure the functional correctness.</p>
-</li>
+</ol>
+<pre tabindex="0"><code>        Code:
+            void foo(boolean flag) {
+                Object obj;
+                if (flag)
+                    obj = new MyObject();    // stack allocated obejct
+                else
+                    obj = cachedGlobal;      // heap allocated object
+                obj.field = new Object();    // need write barrier conservatively. 
+            }
+</code></pre><pre><code>    Note: A stack-allocated object doesn't required a write barrier check. 
+</code></pre>
+<ol start="4">
+<li><code>Concurrent Mark Check:</code> Marking set of objects for garbage collection can be performed concurrently. A special thread can be used to just mark the set of live objects. However if an object <code>b</code> is stored into an object <code>a</code> that has already been scanned by the concurrent thread then object <code>a</code> need to be rescanned to ensure the functional correctness.</li>
 </ol>
 
   </article>
