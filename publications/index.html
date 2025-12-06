@@ -13,8 +13,8 @@
 
 
 <meta name="description" content="
-  Legend: C: Conference; J: Journal; P: Poster; W: Workshop 
 
+  Legend: C: Conference; J: Journal; P: Poster; W: Workshop
 
 
 
@@ -33,12 +33,14 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Aditya Anand">
-  <meta name="twitter:description" content="Legend: C: Conference; J: Journal; P: Poster; W: Workshop Publications Accepted Posters Accepted Talks [J3]: OOPSLA 2025 Aditya Anand, Vijay Sundaresan, Daryl Maier and Manas Thakur. “CoSSJIT: Combining Static Analysis and Speculation in JIT Compilers”. (To appear) In Proceedings of the ACM on Programming Languages (OOPSLA), Singapore, October 16-18, 2025. [ URL ] [ Preprint ] [ Slides ] [ Video ]">
+  <meta name="twitter:description" content="Legend: C: Conference; J: Journal; P: Poster; W: Workshop
+Publications Accepted Posters Accepted Talks [J3]: OOPSLA 2025 Aditya Anand, Vijay Sundaresan, Daryl Maier and Manas Thakur. “CoSSJIT: Combining Static Analysis and Speculation in JIT Compilers”. (To appear) In Proceedings of the ACM on Programming Languages (OOPSLA), Singapore, October 16-18, 2025. [ URL ] [ Preprint ] [ Slides ] [ Video ]">
 
 <meta property="og:url" content="https://adityaanand7.github.io/publications/">
   <meta property="og:site_name" content="Aditya Anand">
   <meta property="og:title" content="Aditya Anand">
-  <meta property="og:description" content="Legend: C: Conference; J: Journal; P: Poster; W: Workshop Publications Accepted Posters Accepted Talks [J3]: OOPSLA 2025 Aditya Anand, Vijay Sundaresan, Daryl Maier and Manas Thakur. “CoSSJIT: Combining Static Analysis and Speculation in JIT Compilers”. (To appear) In Proceedings of the ACM on Programming Languages (OOPSLA), Singapore, October 16-18, 2025. [ URL ] [ Preprint ] [ Slides ] [ Video ]">
+  <meta property="og:description" content="Legend: C: Conference; J: Journal; P: Poster; W: Workshop
+Publications Accepted Posters Accepted Talks [J3]: OOPSLA 2025 Aditya Anand, Vijay Sundaresan, Daryl Maier and Manas Thakur. “CoSSJIT: Combining Static Analysis and Speculation in JIT Compilers”. (To appear) In Proceedings of the ACM on Programming Languages (OOPSLA), Singapore, October 16-18, 2025. [ URL ] [ Preprint ] [ Slides ] [ Video ]">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
 
@@ -202,59 +204,92 @@
       </h1>
     </header>
 
-    <div class="legend-container">
-  <p><span>Legend:</span> C: Conference; J: Journal; P: Poster; W: Workshop </p>
+    <!-- Legend -->
+<div class="legend-container">
+  <p><span>Legend:</span> C: Conference; J: Journal; P: Poster; W: Workshop</p>
 </div>
 <style>
-/* Style for the legend container */
+/* ---------- Legend ---------- */
 .legend-container {
   margin: 20px 0;
-  padding: 10px;
+  padding: 10px 15px;
   background-color: inherit;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 6px;
 }
-
-/* Style for the legend text */
 .legend-container p {
   margin: 0;
   font-size: 16px;
-  color: inherit;
 }
-
 .legend-container span {
   font-weight: bold;
 }
-</style>
-<style>
+
+/* ---------- Tabs ---------- */
 .tab {
-  overflow: hidden;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 0.1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
 }
+
 .tab button {
-  background-color: #787878;
-  border: none;
-  outline: none;
+  flex: 1 1 auto;
+  min-width: 140px;
+
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 600;
+
+  background: linear-gradient(145deg, #ffffff, #ececec);
+  border: 2px solid #ddd;
+  border-radius: 12px;
+
   cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-  color: #fff;
-  border-radius: 8px 8px 0 0;
-  margin-right: 4px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  color: #333;
 }
+
 .tab button:hover {
-  background-color:rgb(144, 162, 167);
+  background: linear-gradient(145deg, #8fa2aa, #7c9099);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
+
 .tab button.active {
-  background-color:rgb(62, 165, 212);
+  background: linear-gradient(145deg, #3ea5d4, #2e8ab8);
+  color: #fff;
+  border-color: #2e8ab8;
+  box-shadow: 0 4px 12px rgba(62,165,212,0.25);
 }
+
+/* ---------- Tab Content ---------- */
 .tabcontent {
   display: none;
-  padding: 6px 12px;
-  border-top: none;
-}}
+  padding: 20px 15px;
+  /* background: #fafafa; */
+  border-radius: 12px;
+  animation: fadeIn 0.4s ease;
+  /* border: 1px solid #eee; */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .tab button {
+    width: 100%;
+    flex: 1 1 100%;
+    font-size: 15px;
+    padding: 12px 16px;
+  }
+}
 </style>
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'Publications')">Publications</button>
@@ -320,25 +355,29 @@
 </div>
 <script>
 function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
+  const tabcontent = document.getElementsByClassName("tabcontent");
+  const tablinks = document.getElementsByClassName("tablinks");
+
+  // Hide all content
+  for (let i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+  // Remove "active"
+  for (let i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
   }
+
+  // Show current
   document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
+  evt.currentTarget.classList.add("active");
 }
 
-// Open the default tab
-document.addEventListener("DOMContentLoaded", function() {
+// Default Tab
+document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".tablinks").click();
 });
 </script>
-
   </article>
 </section>
 
