@@ -12,22 +12,21 @@
 
 
 
-<meta name="description" content="Hello! I am a PhD Research Scholar in the Department of Computer Science and Engineering at IIT Bombay working with Prof. Manas Thakur.
-I am part of the CompL group within the PLATO Lab.
-I work in the area of compiler optimizations and program analysis. 
-Currently I am working to design a speculative static&#43;dynamic program analysis technique for Java&rsquo;s JIT compiler.">
+<meta name="description" content="
+
+Hello! I am a PhD Research Scholar in the Department of Computer Science and Engineering at IIT Bombay, where I work under the guidance of Prof. Manas Thakur.">
 <meta name="keywords" content="">
 <meta name="fediverse:creator" content="" />
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="About Me">
-  <meta name="twitter:description" content="Hello! I am a PhD Research Scholar in the Department of Computer Science and Engineering at IIT Bombay working with Prof. Manas Thakur. I am part of the CompL group within the PLATO Lab. I work in the area of compiler optimizations and program analysis. Currently I am working to design a speculative static&#43;dynamic program analysis technique for Java’s JIT compiler.">
+  <meta name="twitter:description" content="Hello! I am a PhD Research Scholar in the Department of Computer Science and Engineering at IIT Bombay, where I work under the guidance of Prof. Manas Thakur.">
 
 <meta property="og:url" content="https://adityaanand7.github.io/about/">
   <meta property="og:site_name" content="Aditya Anand">
   <meta property="og:title" content="About Me">
-  <meta property="og:description" content="Hello! I am a PhD Research Scholar in the Department of Computer Science and Engineering at IIT Bombay working with Prof. Manas Thakur. I am part of the CompL group within the PLATO Lab. I work in the area of compiler optimizations and program analysis. Currently I am working to design a speculative static&#43;dynamic program analysis technique for Java’s JIT compiler.">
+  <meta property="og:description" content="Hello! I am a PhD Research Scholar in the Department of Computer Science and Engineering at IIT Bombay, where I work under the guidance of Prof. Manas Thakur.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
 
@@ -191,16 +190,228 @@ Currently I am working to design a speculative static&#43;dynamic program analys
       </h1>
     </header>
 
-    <p>Hello! I am a PhD Research Scholar in the <a href="https://www.cse.iitb.ac.in"  class="external-link" target="_blank" rel="noopener">Department of Computer Science and Engineering</a> at <a href="https://www.iitb.ac.in"  class="external-link" target="_blank" rel="noopener">IIT Bombay</a> working with <a href="https://www.cse.iitb.ac.in/~manas/"  class="external-link" target="_blank" rel="noopener">Prof. Manas Thakur</a>.
-I am part of the <a href="https://www.cse.iitb.ac.in/~manas/students.html"  class="external-link" target="_blank" rel="noopener">CompL group</a> within the <a href="https://www.cse.iitb.ac.in/plato"  class="external-link" target="_blank" rel="noopener">PLATO Lab</a>.
-I work in the area of compiler optimizations and program analysis. <!--The idea of my work to make the long runing program program run faster by performing more and more optimizations.-->
-Currently I am working to design a speculative static+dynamic program analysis technique for Java&rsquo;s JIT compiler.</p>
-<!-- #### Professional Service 
+    <style>
 
-1. Artifact Evaluation Committee Member:
-   * Programming Language Design and Implementation [PLDI 2024](https://pldi24.sigplan.org/track/pldi-2024-pldi-research-artifacts)
-   * European Conference on Object-Oriented Programming [ECOOP 2024](https://2024.ecoop.org/track/ecoop-2024-artifact-evaluation) -->
+/* ================================
+   IIT BOMBAY OFFICIAL LIGHT THEME
+   ================================ */
+
+:root {
+  --primary: #003262;       /* IITB Deep Blue */
+  --primary-light: #0056A1; /* IITB Bright Blue */
+  --accent: #4A90D9;        /* Accent Blue */
+  --accent-light: #A7C4DD;  /* Soft Highlight */
+  --text-light: #222;       /* Main text */
+}
+
+/* INTRO SECTION ------------------------------------------------------ */
+
+.intro-section {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 5px solid var(--primary);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.intro-section p {
+  font-size: 1.05em;
+  line-height: 1.85;
+  color: var(--text-light);
+}
+
+.intro-section a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.intro-section a:hover {
+  color: var(--primary-light);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* SECTION HEADERS ------------------------------------------------------ */
+
+.section-header {
+  font-size: 2em;
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary-light);
+  padding-bottom: 10px;
+}
+
+/* SERVICE ITEM ----------------------------------------------------------- */
+
+.service-item {
+  background: #fafafa;
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  padding: 20px 25px;
+  margin: 15px 0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+}
+
+.service-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.service-role {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.15em;
+}
+
+.service-item li {
+  padding: 8px 0 8px 25px;
+  position: relative;
+  list-style: none;
+}
+
+.service-item li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary-light);
+  font-weight: bold;
+}
+
+.service-item a {
+  color: var(--primary);
+}
+
+.service-item a:hover {
+  color: var(--primary-light);
+}
+
+/* AWARDS ----------------------------------------------------------- */
+
+.award-item {
+  background: #fafafa;
+  border-left: 4px solid var(--primary);
+  padding: 15px 20px;
+  margin: 12px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  color: #000;
+}
+
+.award-item:hover {
+  transform: translateX(5px);
+  border-left-color: var(--primary-light);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.award-item strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.award-year {
+  float: right;
+  background: var(--primary);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+
+/* ================================
+   PURE BLACK DARK MODE
+   ================================ */
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --dark-bg: #000000;
+    --dark-text: #e6e6e6;
+    --dark-text-strong: #ffffff;
+    --dark-accent: #0099e6; /* Clean bright blue */
+  }
+
+
+  .intro-section,
+  .service-item,
+  .award-item {
+    background: var(--dark-bg);
+    border-left-color: var(--primary-light);
+    color: var(--dark-text);
+    box-shadow: 0 0 0 rgba(0,0,0,0); /* no gradient, no shadows */
+  }
+
+  .intro-section p,
+  .service-item li,
+  .award-item {
+    color: var(--dark-text);
+  }
+
+  .intro-section a,
+  .service-item a {
+    color: var(--accent-light);
+    border-bottom-color: transparent;
+  }
+
+  .intro-section a:hover,
+  .service-item a:hover {
+    color: var(--dark-accent);
+    border-bottom-color: var(--dark-accent);
+  }
+
+  .section-header {
+    color: var(--accent-light);
+    border-bottom-color: var(--primary-light);
+  }
+
+  .service-role {
+    color: var(--dark-text-strong);
+  }
+
+  .service-item li:before {
+    color: var(--dark-accent);
+  }
+
+  .award-item strong {
+    color: var(--dark-text-strong);
+  }
+
+  .award-year {
+    background: var(--primary-light);
+    color: white;
+  }
+  
+}
+
+/* MOBILE ----------------------------------------------------------- */
+@media (max-width: 600px) {
+  .intro-section,
+  .service-item,
+  .award-item {
+    padding: 15px 20px;
+  }
+
+  .section-header {
+    font-size: 1.7em;
+  }
+
+  .award-year {
+    float: none;
+    display: inline-block;
+    margin-top: 8px;
+  }
+}
+
+</style>
+<div class="intro-section">
+<p>Hello! I am a PhD Research Scholar in the <a href="https://www.cse.iitb.ac.in"  class="external-link" target="_blank" rel="noopener">Department of Computer Science and Engineering</a> at <a href="https://www.iitb.ac.in"  class="external-link" target="_blank" rel="noopener">IIT Bombay</a>, where I work under the guidance of <a href="https://www.cse.iitb.ac.in/~manas/"  class="external-link" target="_blank" rel="noopener">Prof. Manas Thakur</a>.</p>
+<p>I am a member of the <a href="https://www.cse.iitb.ac.in/~manas/students.html"  class="external-link" target="_blank" rel="noopener">CompL group</a> within the <a href="https://www.cse.iitb.ac.in/plato"  class="external-link" target="_blank" rel="noopener">PLATO Lab</a>, focusing on compiler optimizations and program analysis. My research centers on developing speculative static and dynamic program analysis techniques for Java&rsquo;s JIT compiler, with the goal of enhancing runtime performance through advanced optimization strategies.</p>
+</div>
 <hr />
+<div class="service-section">
 <h2 id="professional-service">
   Professional Service
   <a class="heading-link" href="#professional-service">
@@ -208,39 +419,18 @@ Currently I am working to design a speculative static+dynamic program analysis t
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<ul>
-<li><strong>Artifact Evaluation Committee Member</strong>
-<ul>
-<li><a href="https://2025.ecoop.org/track/ecoop-2025-artifact-evaluation"  class="external-link" target="_blank" rel="noopener">ECOOP 2025</a> — <em>European Conference on Object-Oriented Programming</em></li>
-<li><a href="https://pldi24.sigplan.org/track/pldi-2024-pldi-research-artifacts"  class="external-link" target="_blank" rel="noopener">PLDI 2024</a> — <em>Programming Language Design and Implementation</em></li>
-<li><a href="https://2024.ecoop.org/track/ecoop-2024-artifact-evaluation"  class="external-link" target="_blank" rel="noopener">ECOOP 2024</a> — <em>European Conference on Object-Oriented Programming</em></li>
-</ul>
-</li>
-</ul>
+<!-- <h2 class="section-header">Professional Service</h2> -->
+<div class="service-item">
+  <div class="service-role">Artifact Evaluation Committee Member</div>
+  <ul>
+    <li><a href="https://2025.ecoop.org/track/ecoop-2025-artifact-evaluation">European Conference on Object-Oriented Programming (ECOOP 2025)</a></li>
+    <li><a href="https://pldi24.sigplan.org/track/pldi-2024-pldi-research-artifacts">Programming Language Design and Implementation (PLDI 2024)</a></li>
+    <li><a href="https://2024.ecoop.org/track/ecoop-2024-artifact-evaluation">European Conference on Object-Oriented Programming (ECOOP 2024)</a></li>
+  </ul>
+</div>
+</div>
 <hr />
-<h2 id="academic-experience">
-  Academic Experience
-  <a class="heading-link" href="#academic-experience">
-    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<ul>
-<li><strong>Teaching Assistant</strong>
-<ul>
-<li><a href="https://docs.google.com/spreadsheets/d/1rSun32qdhh4oGUa03oZBAFn7UyHdyyVNceyDilzIYKs/edit?gid=0#gid=0"  class="external-link" target="_blank" rel="noopener">(CS339+CS355: Abstractions and Paradigms for Programming)</a>, IIT Bombay, Fall 2025</li>
-<li><a href="https://www.cse.iitb.ac.in/~manas/courses/cs614/spring25/index.html"  class="external-link" target="_blank" rel="noopener">(CS614: Advanced Compilers)</a>, IIT Bombay, Spring 2025</li>
-<li><a href="https://docs.google.com/spreadsheets/d/1bjAkm2AfeTYtfx2GSm5-ZaqFZCeAahDbsNJNxRVsjG4/edit?gid=0#gid=0"  class="external-link" target="_blank" rel="noopener">(CS339+CS355: Abstractions and Paradigms for Programming)</a>, IIT Bombay, Fall 2024</li>
-<li><a href="https://www.cse.iitb.ac.in/~manas/courses/cs6004/spring24/index.html"  class="external-link" target="_blank" rel="noopener">(CS6004: Code Optimization for Object-Oriented Languages)</a>, IIT Bombay, Spring 2024</li>
-<li><a href="https://www.cse.iitb.ac.in/~manas/courses/cs614/autumn23/index.html"  class="external-link" target="_blank" rel="noopener">(CS614: Advanced Compilers)</a>, IIT Bombay, Fall 2023</li>
-<li>(CS515: Advanced Computer Science Practicum), IIT Mandi, Fall 2022</li>
-<li>(CS611: Program Analysis), IIT Mandi, Spring 2022</li>
-<li>(CS502: Compiler Design), IIT Mandi, Fall 2021</li>
-<li>(CS302: Paradigms of Programming), IIT Mandi, Spring 2021</li>
-</ul>
-</li>
-</ul>
-<hr />
+<div class="awards-section">
 <h2 id="awards">
   Awards
   <a class="heading-link" href="#awards">
@@ -248,61 +438,50 @@ Currently I am working to design a speculative static+dynamic program analysis t
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<ul>
-<li>ACM/IARCS Travel Grant. 2025</li>
-<li>George B. Fernandes Award, Excellence in PhD Research Progress, IIT Bombay. 2025</li>
-<li>Excellence in Teaching Assistantship, IIT Bombay. Spring 2024</li>
-<li>ACM/IARCS Travel Grant. 2024</li>
-<li>SIGPLAN Fellowship, PLMW and PLDI 2024. 2024</li>
-<li>Poster Presentation winner RISC 24, IIT Bombay. 2024</li>
-<li>Excellence in Teaching Assistantship, IIT Bombay. Fall 2023</li>
-<li>GATE Fellowship, Government of India. 2020</li>
-<li>4th rank in B.E, Department of Computer Science, VTU, Belgavi, Karnataka. 2019</li>
-<li>1st rank in Inter College Technical Quiz Competition. 2018</li>
-<li>Awarded Rajya Puraskar in Bharat Scouts and Guides. 2013</li>
-</ul>
-<!-- #### Academic Experience
-
-1. Teaching Assistant [(CS614: Advanced Compilers)](https://www.cse.iitb.ac.in/~manas/courses/cs614/spring25/index.html), Indian Institute of Technology Bombay, Spring 2025. 
-
-2. Teaching Assistant [(CS339+CS355: Abstractions and Paradigms for Programming)](https://docs.google.com/spreadsheets/d/1bjAkm2AfeTYtfx2GSm5-ZaqFZCeAahDbsNJNxRVsjG4/edit?gid=0#gid=0), Indian Institute of Technology Bombay, Fall 2024. 
-
-3. Teaching Assistant [(CS6004: Code Optimization for Object-Oriented Languages)](https://www.cse.iitb.ac.in/~manas/courses/cs6004/spring24/index.html), Indian Institute of Technology Bombay, Spring 2024. 
-
-4. Teaching Assistant [(CS614: Advanced Compilers)](https://www.cse.iitb.ac.in/~manas/courses/cs614/autumn23/index.html), Indian Institute of Technology Bombay, Fall 2023. 
-
-5. Teaching Assistant (CS515: Advanced Computer Science Practicum), Indian Institute of Technology Mandi, Fall 2022.
-
-6. Teaching Assistant (CS611: Program Analysis), Indian Institute of Technology Mandi, Spring 2022.
-
-7. Teaching Assistant (CS502: Compiler Design), Indian Institute of Technology Mandi, Fall 2021.
-
-8. Teaching Assistant (CS302: Paradigms of Programming), Indian Institute of Technology Mandi, Spring 2021. -->
-<!-- #### Academic Experience  
--  **Indian Institute of Technology Bombay** <br>
-    1. Teaching Assistant [(CS339+CS355: Abstractions and Paradigms for Programming)](https://docs.google.com/spreadsheets/d/1rSun32qdhh4oGUa03oZBAFn7UyHdyyVNceyDilzIYKs/edit?gid=0#gid=0), **Fall 2025**  
-    2. Teaching Assistant [(CS614: Advanced Compilers)](https://www.cse.iitb.ac.in/~manas/courses/cs614/spring25/index.html), **Spring 2025**  
-    3. Teaching Assistant [(CS339+CS355: Abstractions and Paradigms for Programming)](https://docs.google.com/spreadsheets/d/1bjAkm2AfeTYtfx2GSm5-ZaqFZCeAahDbsNJNxRVsjG4/edit?gid=0#gid=0), **Fall 2024**  
-    4. Teaching Assistant [(CS6004: Code Optimization for Object-Oriented Languages)](https://www.cse.iitb.ac.in/~manas/courses/cs6004/spring24/index.html), **Spring 2024**  
-    5. Teaching Assistant [(CS614: Advanced Compilers)](https://www.cse.iitb.ac.in/~manas/courses/cs614/autumn23/index.html), **Fall 2023**  
-
-- **Indian Institute of Technology Mandi** 
-
-    6. Teaching Assistant **CS515: Advanced Computer Science Practicum**, **Fall 2022**  
-    7. Teaching Assistant **CS611: Program Analysis**, **Spring 2022**  
-    8. Teaching Assistant **CS502: Compiler Design**, **Fall 2021**  
-    9. Teaching Assistant **CS302: Paradigms of Programming**, **Spring 2021**   -->
-<!-- #### Awards
--  George B. Fernandes Award, Excellence in PhD Research Progress, IIT Bombay. 2025
--  Excellence in Teaching Assistantship, IIT Bombay. Spring 2024
--  ACM/IARCS Travel Grant. 2024
--  SIGPLAN Fellowship, PLMW and PLDI 2024. 2024
--  Poster Presentation winner RISC 24, IIT Bombay. 2024
--  Excellence in Teaching Assistantship, IIT Bombay. Fall 2023
--  GATE Fellowship,Government of India. 2020
--  4th rank in B.E, Department of Computer Science, VTU, Belgavi, Karnataka. 2019
--  1st rank in Inter College Technical Quiz Competition. 2018
--  Awarded Rajya Puraskar in Bharat Scouts and Guides. 2013 -->
+<div class="award-item">
+  <span class="award-year">2025</span>
+  <strong>ACM/IARCS Travel Grant</strong>
+</div>
+<div class="award-item">
+  <span class="award-year">2025</span>
+  <strong>George B. Fernandes Award</strong>, Excellence in PhD Research Progress, IIT Bombay
+</div>
+<div class="award-item">
+  <span class="award-year">2024</span>
+  <strong>Excellence in Teaching Assistantship</strong>, IIT Bombay, Spring 2024
+</div>
+<div class="award-item">
+  <span class="award-year">2024</span>
+  <strong>ACM/IARCS Travel Grant</strong>
+</div>
+<div class="award-item">
+  <span class="award-year">2024</span>
+  <strong>SIGPLAN Fellowship</strong>, PLMW and PLDI 2024
+</div>
+<div class="award-item">
+  <span class="award-year">2024</span>
+  <strong>Poster Presentation Winner</strong>, RISC 24, IIT Bombay
+</div>
+<div class="award-item">
+  <span class="award-year">2023</span>
+  <strong>Excellence in Teaching Assistantship</strong>, IIT Bombay, Fall 2023
+</div>
+<div class="award-item">
+  <span class="award-year">2020</span>
+  <strong>GATE Fellowship</strong>, Government of India
+</div>
+<div class="award-item">
+  <span class="award-year">2019</span>
+  <strong>4th Rank in B.E</strong>, Department of Computer Science, VTU, Belgavi, Karnataka
+</div>
+<div class="award-item">
+  <span class="award-year">2018</span>
+  <strong>1st Rank</strong>, Inter College Technical Quiz Competition
+</div>
+<div class="award-item">
+  <span class="award-year">2013</span>
+  <strong>Rajya Puraskar</strong>, Bharat Scouts and Guides
+</div>
 
   </article>
 </section>
