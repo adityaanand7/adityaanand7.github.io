@@ -257,7 +257,7 @@ programs as if they were just lists.</li>
   </a>
 </h2>
 <p>Consider a simple arithmetic expression in Lisp:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#50fa7b">+</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#50fa7b">+</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span>)
 </span></span></code></pre></div><p>This is both:</p>
 <ol>
 <li><strong>Code</strong> → adds 2 and 3.</li>
@@ -266,7 +266,7 @@ numbers <code>2</code> and <code>3</code>.</li>
 </ol>
 <p>You can prevent evaluation and treat it purely as data using the quote
 operator:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#ff79c6">&#39;</span>(<span style="color:#50fa7b">+</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#ff79c6">&#39;</span>(<span style="color:#50fa7b">+</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span>)
 </span></span></code></pre></div><p>This returns the list <code>(+ 2 3)</code> without executing it.</p>
 <hr />
 <h2 id="3-manipulating-code-as-data">
@@ -277,10 +277,10 @@ operator:</p>
   </a>
 </h2>
 <p>Because code is just lists, you can construct it dynamically:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#50fa7b">list</span> <span style="color:#f1fa8c">&#39;+</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#50fa7b">list</span> <span style="color:#f1fa8c">&#39;+</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span>)
 </span></span><span style="display:flex;"><span><span style="color:#6272a4">;; =&gt; (+ 2 3)</span>
 </span></span></code></pre></div><p>Now you can ask Lisp to evaluate this constructed list:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#50fa7b">eval</span> (<span style="color:#50fa7b">list</span> <span style="color:#f1fa8c">&#39;+</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#50fa7b">eval</span> (<span style="color:#50fa7b">list</span> <span style="color:#f1fa8c">&#39;+</span> <span style="color:#bd93f9">2</span> <span style="color:#bd93f9">3</span>))
 </span></span><span style="display:flex;"><span><span style="color:#6272a4">;; =&gt; 5</span>
 </span></span></code></pre></div><p>The program <strong>built a piece of code</strong> and then executed it.</p>
 <hr />
@@ -292,12 +292,12 @@ operator:</p>
   </a>
 </h2>
 <p>A more powerful example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">make-square</span> (<span style="color:#8be9fd;font-style:italic">x</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">make-square</span> (<span style="color:#8be9fd;font-style:italic">x</span>)
 </span></span><span style="display:flex;"><span>  (<span style="color:#50fa7b">list</span> <span style="color:#f1fa8c">&#39;*</span> <span style="color:#8be9fd;font-style:italic">x</span> <span style="color:#8be9fd;font-style:italic">x</span>))
 </span></span></code></pre></div><p>Calling <code>(make-square 5)</code> produces:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#50fa7b">*</span> <span style="color:#bd93f9">5</span> <span style="color:#bd93f9">5</span>)   <span style="color:#6272a4">;; just a list</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#50fa7b">*</span> <span style="color:#bd93f9">5</span> <span style="color:#bd93f9">5</span>)   <span style="color:#6272a4">;; just a list</span>
 </span></span></code></pre></div><p>If we evaluate it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#50fa7b">eval</span> (<span style="color:#8be9fd;font-style:italic">make-square</span> <span style="color:#bd93f9">5</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#50fa7b">eval</span> (<span style="color:#8be9fd;font-style:italic">make-square</span> <span style="color:#bd93f9">5</span>))
 </span></span><span style="display:flex;"><span><span style="color:#6272a4">;; =&gt; 25</span>
 </span></span></code></pre></div><p>We&rsquo;ve written a function that <strong>creates new code</strong> and then executes it.</p>
 <hr />
@@ -317,10 +317,10 @@ returns new Lisp code (also lists).</li>
 original.</li>
 </ul>
 <p>Example macro:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#8be9fd;font-style:italic">defmacro</span> <span style="color:#8be9fd;font-style:italic">square</span> (<span style="color:#8be9fd;font-style:italic">x</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#8be9fd;font-style:italic">defmacro</span> <span style="color:#8be9fd;font-style:italic">square</span> (<span style="color:#8be9fd;font-style:italic">x</span>)
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">`</span>(<span style="color:#50fa7b">*</span> <span style="color:#ff79c6">,</span><span style="color:#8be9fd;font-style:italic">x</span> <span style="color:#ff79c6">,</span><span style="color:#8be9fd;font-style:italic">x</span>))
 </span></span></code></pre></div><p>Now:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#8be9fd;font-style:italic">square</span> <span style="color:#bd93f9">7</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#8be9fd;font-style:italic">square</span> <span style="color:#bd93f9">7</span>)
 </span></span><span style="display:flex;"><span><span style="color:#6272a4">;; expands to (* 7 7)</span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4">;; evaluates to 49</span>
 </span></span></code></pre></div><p>This is different from functions because the <strong>transformation happens

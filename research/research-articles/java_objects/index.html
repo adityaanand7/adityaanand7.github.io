@@ -221,7 +221,7 @@ new A // allocate memory, pushes uninitialized object reference onto stack dup /
   </a>
 </h2>
 <p>When you write:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>A obj <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> A();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>A obj <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> A();
 </span></span></code></pre></div><p>The Java compiler compiles this to JVM bytecode like:</p>
 <pre tabindex="0"><code>new A           // allocate memory, pushes uninitialized object reference onto stack
 dup             // duplicates the reference, one for the constructor, one for the variable &#39;obj&#39;
