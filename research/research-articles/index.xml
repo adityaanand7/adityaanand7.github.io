@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© Aditya Anand 2023. &lt;a href=&#39;https://adityaanand7.github.io/privacy&#39;&gt;Privacy policy&lt;/a&gt;.</copyright>
-    <lastBuildDate>Thu, 02 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://adityaanand7.github.io/research/research-articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Precision without Regret: Optimistic Stack Allocation in JIT Compiler</title>
+      <link>https://adityaanand7.github.io/research/research-articles/aditya-anand-phd/</link>
+      <pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://adityaanand7.github.io/research/research-articles/aditya-anand-phd/</guid>
+      <description>&lt;hr /&gt;&#xA;&lt;span style=&#34;color:#c0392b;&#34;&gt;&#xA;&lt;b&gt; &lt;center&gt; To be published by 28th February 2026. &lt;/center&gt;&lt;/b&gt;&#xA;&lt;/span&gt;</description>
+    </item>
     <item>
       <title>Homoiconicity: Code as Data</title>
       <link>https://adityaanand7.github.io/research/research-articles/homoiconicity/</link>

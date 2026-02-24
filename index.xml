@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>© Aditya Anand 2023. &lt;a href=&#39;https://adityaanand7.github.io/privacy&#39;&gt;Privacy policy&lt;/a&gt;.</copyright>
-    <lastBuildDate>Thu, 02 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://adityaanand7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Precision without Regret: Optimistic Stack Allocation in JIT Compiler</title>
+      <link>https://adityaanand7.github.io/research/research-articles/aditya-anand-phd/</link>
+      <pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://adityaanand7.github.io/research/research-articles/aditya-anand-phd/</guid>
+      <description>&lt;hr /&gt;&#xA;&lt;span style=&#34;color:#c0392b;&#34;&gt;&#xA;&lt;b&gt; &lt;center&gt; To be published by 28th February 2026. &lt;/center&gt;&lt;/b&gt;&#xA;&lt;/span&gt;</description>
+    </item>
     <item>
       <title>Homoiconicity: Code as Data</title>
       <link>https://adityaanand7.github.io/research/research-articles/homoiconicity/</link>
@@ -56,7 +63,7 @@
       <link>https://adityaanand7.github.io/outreach/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://adityaanand7.github.io/outreach/</guid>
-      <description>&lt;h2 id=&#34;outreach&#34;&gt;&#xA;  Outreach:&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#outreach&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;“Precision Without Regret: Efficient Optimization Strategies for JIT Compilation&amp;quot;. Invited talk at &lt;a href=&#34;https://cse.iith.ac.in/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CSE, IIT Hyderabad&lt;/a&gt;. February 11th, 2026. &lt;br&gt;&#xA;&lt;a href=&#34;https://adityaanand7.github.io/pdf/Aditya-IIT-Hyderabad-Talk.pdf&#34; &gt; [ Slides ] &lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;“Optimistic Stack Allocation and Dynamic Heapification for Managed Runtimes”. Invited talk at &lt;a href=&#34;https://www.cse.iitb.ac.in/~biswa/systalksind24.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Computer Systems in India Talk Series (Systems@India)&lt;/a&gt; August 14th, 2024. &lt;br&gt;&#xA;&lt;a href=&#34;https://adityaanand7.github.io/pdf/Aditya-Systems@India-ppt.pdf&#34; &gt; [ Slides ] &lt;/a&gt; &lt;a href=&#34;https://www.youtube.com/watch?v=xMgGx1GLlGY&amp;amp;list=PLw6vmiIQrilR3PJ2TD0ZFx0aKkeNJOZkW&amp;amp;index=6&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; [ Video ] &lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h2 id=&#34;outreach&#34;&gt;&#xA;  Outreach:&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#outreach&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;“Precision Without Regret: Optimistic Stack Allocation in JIT Compilers&amp;quot;. Invited talk at &lt;a href=&#34;https://cse.iith.ac.in/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CSE, IIT Hyderabad&lt;/a&gt;. February 11th, 2026. &lt;br&gt;&#xA;&lt;a href=&#34;https://adityaanand7.github.io/pdf/Aditya-IIT-Hyderabad-Talk.pdf&#34; &gt; [ Slides ] &lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;“Optimistic Stack Allocation and Dynamic Heapification for Managed Runtimes”. Invited talk at &lt;a href=&#34;https://www.cse.iitb.ac.in/~biswa/systalksind24.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Computer Systems in India Talk Series (Systems@India)&lt;/a&gt; August 14th, 2024. &lt;br&gt;&#xA;&lt;a href=&#34;https://adityaanand7.github.io/pdf/Aditya-Systems@India-ppt.pdf&#34; &gt; [ Slides ] &lt;/a&gt; &lt;a href=&#34;https://www.youtube.com/watch?v=xMgGx1GLlGY&amp;amp;list=PLw6vmiIQrilR3PJ2TD0ZFx0aKkeNJOZkW&amp;amp;index=6&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; [ Video ] &lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title></title>
