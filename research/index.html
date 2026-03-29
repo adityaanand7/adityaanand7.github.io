@@ -12,10 +12,16 @@
 
 <meta name="description" content="
 
-  My Research
   
-    Precision without Regret: Optimistic Stack Allocation in JIT Compiler.
-    February 28, 2026 · Research Article
+    
+      Research Articles
+      Technical Guides
+      General Guide
+      Interesting Reads
+      Teaching Guides
+    
+  
+  
   
   Research Articles
   
@@ -50,6 +56,13 @@
   
     In Defense of Soundiness: A Manifesto
   
+  Teaching Guides
+  
+    Coming Soon
+    This section is reserved for future teaching-focused material.
+  
+  
+
 ">
 <meta name="keywords" content="">
 <meta name="fediverse:creator" content="" />
@@ -57,12 +70,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="PL and Compilers Research">
-  <meta name="twitter:description" content="My Research Precision without Regret: Optimistic Stack Allocation in JIT Compiler. February 28, 2026 · Research Article Research Articles Homoiconicity: Code as Data October 2, 2025 · Research Article The Invisible Steps: How Java Really Allocates Your Objects July 16, 2025 · Research Article Write Barriers in JIT Compilers February 20, 2024 · Research Article Technical Guides Setting up OpenJ9 on the Server August 10, 2025 · Technical Guide General Guide Conferences, Journals and Workshops (For PL and Compilers) July 15, 2023 · General Guide Interesting Reads What is a Bug Why Are There So Many Programming Languages In Defense of Soundiness: A Manifesto">
+  <meta name="twitter:description" content="Research Articles Technical Guides General Guide Interesting Reads Teaching Guides Research Articles Homoiconicity: Code as Data October 2, 2025 · Research Article The Invisible Steps: How Java Really Allocates Your Objects July 16, 2025 · Research Article Write Barriers in JIT Compilers February 20, 2024 · Research Article Technical Guides Setting up OpenJ9 on the Server August 10, 2025 · Technical Guide General Guide Conferences, Journals and Workshops (For PL and Compilers) July 15, 2023 · General Guide Interesting Reads What is a Bug Why Are There So Many Programming Languages In Defense of Soundiness: A Manifesto Teaching Guides Coming Soon This section is reserved for future teaching-focused material.">
 
 <meta property="og:url" content="https://adityaanand7.github.io/research/">
   <meta property="og:site_name" content="Aditya Anand">
   <meta property="og:title" content="PL and Compilers Research">
-  <meta property="og:description" content="My Research Precision without Regret: Optimistic Stack Allocation in JIT Compiler. February 28, 2026 · Research Article Research Articles Homoiconicity: Code as Data October 2, 2025 · Research Article The Invisible Steps: How Java Really Allocates Your Objects July 16, 2025 · Research Article Write Barriers in JIT Compilers February 20, 2024 · Research Article Technical Guides Setting up OpenJ9 on the Server August 10, 2025 · Technical Guide General Guide Conferences, Journals and Workshops (For PL and Compilers) July 15, 2023 · General Guide Interesting Reads What is a Bug Why Are There So Many Programming Languages In Defense of Soundiness: A Manifesto">
+  <meta property="og:description" content="Research Articles Technical Guides General Guide Interesting Reads Teaching Guides Research Articles Homoiconicity: Code as Data October 2, 2025 · Research Article The Invisible Steps: How Java Really Allocates Your Objects July 16, 2025 · Research Article Write Barriers in JIT Compilers February 20, 2024 · Research Article Technical Guides Setting up OpenJ9 on the Server August 10, 2025 · Technical Guide General Guide Conferences, Journals and Workshops (For PL and Compilers) July 15, 2023 · General Guide Interesting Reads What is a Bug Why Are There So Many Programming Languages In Defense of Soundiness: A Manifesto Teaching Guides Coming Soon This section is reserved for future teaching-focused material.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
 
@@ -89,7 +102,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
   
 
 
@@ -224,10 +237,64 @@
     </h1>
   </header>
   <style>
-.blog-list {
-  max-width: 700px;
-  margin: 2em auto 0 auto;
+.research-layout {
+  width: min(1040px, 100%);
+  max-width: 1040px;
+  margin: 1.2em auto 0 auto;
   padding: 0 1em;
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 1.4em;
+  align-items: start;
+  box-sizing: border-box;
+}
+.research-layout > * {
+  min-width: 0;
+}
+.blog-list {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.section-nav-wrap {
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 18px;
+}
+.section-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45em;
+  background: #f7f9fb;
+  border: 1px solid #dbe5ef;
+  border-radius: 12px;
+  padding: 1em;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.section-nav a {
+  display: block;
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #1e4d76;
+  background: #eef5fc;
+  border: 1px solid #c9ddf0;
+  border-radius: 8px;
+  padding: 0.52em 0.7em;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+.section-nav a:hover {
+  color: #0f3e67;
+  background: #e0eefb;
+  transform: translateX(2px);
+}
+.section-nav a.active {
+  color: #0f3e67;
+  background: #dceafb;
+  border-color: #9fc2e3;
 }
 .blog-category {
   font-size: 1.18em;
@@ -236,6 +303,7 @@
   margin: 1.2em 0 0.7em 0;
   letter-spacing: 0.5px;
   padding-left: 0;
+  scroll-margin-top: 12px;
 }
 .blog-card {
   /* background: #fff; */
@@ -258,6 +326,8 @@
   margin-bottom: 0.3em;
   text-decoration: none;
   transition: color 0.2s;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .blog-title:hover {
   color: #005fa3;
@@ -271,23 +341,77 @@
 .blog-desc {
   display: none;
 }
+@media (max-width: 900px) {
+  .research-layout {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  .section-nav-wrap {
+    position: static;
+  }
+  .section-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 600px) {
+  .research-layout {
+    padding: 0 0.55em;
+    gap: 0.7em;
+  }
+  .section-nav {
+    flex-wrap: wrap;
+    overflow: visible;
+    padding: 0.55em;
+    gap: 0.4em;
+  }
+  .section-nav a {
+    flex: 1 1 calc(50% - 0.4em);
+    min-width: 130px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 0.88em;
+    padding: 0.42em 0.62em;
+  }
   .blog-list {
-    max-width: 98vw;
-    padding: 0 0.2em;
+    max-width: 100%;
+  }
+  .blog-category {
+    font-size: 1.05em;
+    margin: 1em 0 0.55em 0;
+  }
+  .blog-title {
+    font-size: 1.03em;
+    line-height: 1.35;
+  }
+  .blog-meta {
+    font-size: 0.92em;
   }
   .blog-card {
-    padding: 0.8em 0.5em 0.7em 0.5em;
+    margin-bottom: 0.85em;
+    padding: 0.78em 0.62em 0.68em 0.62em;
+    box-sizing: border-box;
   }
 }
 </style>
-<div class="blog-list">
-  <div class="blog-category">My Research</div>
+<div class="research-layout">
+  <div class="section-nav-wrap">
+    <nav class="section-nav" aria-label="Research page navigation">
+      <a href="#research-articles">Research Articles</a>
+      <a href="#technical-guides">Technical Guides</a>
+      <a href="#general-guide">General Guide</a>
+      <a href="#interesting-reads">Interesting Reads</a>
+      <a href="#teaching-guides">Teaching Guides</a>
+    </nav>
+  </div>
+  <div class="blog-list">
+  <!-- <div class="blog-category">My Research</div>
   <div class="blog-card">
     <a class="blog-title" href="/research/research-articles/aditya-anand-phd/">Precision without Regret: Optimistic Stack Allocation in JIT Compiler.</a>
     <div class="blog-meta">February 28, 2026 · Research Article</div>
-  </div>
-  <div class="blog-category">Research Articles</div>
+  </div> -->
+  <div class="blog-category" id="research-articles">Research Articles</div>
   <div class="blog-card">
     <a class="blog-title" href="/research/research-articles/homoiconicity/">Homoiconicity: Code as Data</a>
     <div class="blog-meta">October 2, 2025 · Research Article</div>
@@ -300,17 +424,17 @@
     <a class="blog-title" href="/research/research-articles/write_barriers/">Write Barriers in JIT Compilers</a>
     <div class="blog-meta">February 20, 2024 · Research Article</div>
   </div>
-  <div class="blog-category">Technical Guides</div>
+  <div class="blog-category" id="technical-guides">Technical Guides</div>
   <div class="blog-card">
     <a class="blog-title" href="/research/technical-guides/setup_openj9/">Setting up OpenJ9 on the Server</a>
     <div class="blog-meta">August 10, 2025 · Technical Guide</div>
   </div>
-  <div class="blog-category">General Guide</div>
+  <div class="blog-category" id="general-guide">General Guide</div>
   <div class="blog-card">
-    <a class="blog-title" href="/research/research-articles/conference/">Conferences, Journals and Workshops (For PL and Compilers)</a>
+    <a class="blog-title" href="/research/research-articles/conference-deadlines">Conferences, Journals and Workshops (For PL and Compilers)</a>
     <div class="blog-meta">July 15, 2023 · General Guide</div>
   </div>
-  <div class="blog-category">Interesting Reads</div>
+  <div class="blog-category" id="interesting-reads">Interesting Reads</div>
   <div class="blog-card">
     <a class="blog-title" href="https://cacm.acm.org/opinion/what-is-a-bug/">What is a Bug</a>
   </div>
@@ -320,7 +444,48 @@
   <div class="blog-card">
     <a class="blog-title" href="https://dl.acm.org/doi/pdf/10.1145/2644805">In Defense of Soundiness: A Manifesto</a>
   </div>
+  <div class="blog-category" id="teaching-guides">Teaching Guides</div>
+  <div class="blog-card">
+    <span class="blog-title" style="color:#666; text-decoration:none; cursor:default;">Coming Soon</span>
+    <div class="blog-meta">This section is reserved for future teaching-focused material.</div>
+  </div>
+  </div>
 </div>
+<script>
+  const navLinks = Array.from(document.querySelectorAll('.section-nav a'));
+  const sections = navLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  function setActiveLink(id) {
+    navLinks.forEach(link => {
+      const isActive = link.getAttribute('href') === `#${id}`;
+      link.classList.toggle('active', isActive);
+      link.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  }
+
+  if (sections.length) {
+    const observer = new IntersectionObserver(
+      entries => {
+        const visible = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible.length > 0) {
+          setActiveLink(visible[0].target.id);
+        }
+      },
+      {
+        root: null,
+        threshold: [0.2, 0.5, 0.8],
+        rootMargin: '-10% 0px -55% 0px'
+      }
+    );
+
+    sections.forEach(section => observer.observe(section));
+    setActiveLink(sections[0].id);
+  }
+</script>
 
   <ul>
     
