@@ -32,25 +32,25 @@ This sequence of bytecodes is then executed by either the interpreter or the Jus
 <meta name="fediverse:creator" content="" />
 
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="The Invisible Steps: How Java Really Allocates Your Objects">
-  <meta name="twitter:description" content="In Java, when you allocate an object using the new keyword, a complex series of steps takes place behind the scenes involving bytecode interpretation or JIT compilation, memory management, and synchronization with the garbage collector.
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="The Invisible Steps: How Java Really Allocates Your Objects">
+	<meta name="twitter:description" content="In Java, when you allocate an object using the new keyword, a complex series of steps takes place behind the scenes involving bytecode interpretation or JIT compilation, memory management, and synchronization with the garbage collector.
 1. new Bytecode Instruction Link to heading When you write:
 A obj = new A(); The Java compiler compiles this to JVM bytecode like:
 new A // allocate memory, pushes uninitialized object reference onto stack dup // duplicates the reference, one for the constructor, one for the variable &#39;obj&#39; invokespecial // calls the constructor (e.g., A.&lt;init&gt;()) astore_1 // stores the object reference into local variable &#39;obj&#39; This sequence of bytecodes is then executed by either the interpreter or the Just-In-Time (JIT) compiled code.">
 
 <meta property="og:url" content="https://adityaanand7.github.io/research/research-articles/java_objects/">
-  <meta property="og:site_name" content="Aditya Anand">
-  <meta property="og:title" content="The Invisible Steps: How Java Really Allocates Your Objects">
-  <meta property="og:description" content="In Java, when you allocate an object using the new keyword, a complex series of steps takes place behind the scenes involving bytecode interpretation or JIT compilation, memory management, and synchronization with the garbage collector.
+	<meta property="og:site_name" content="Aditya Anand">
+	<meta property="og:title" content="The Invisible Steps: How Java Really Allocates Your Objects">
+	<meta property="og:description" content="In Java, when you allocate an object using the new keyword, a complex series of steps takes place behind the scenes involving bytecode interpretation or JIT compilation, memory management, and synchronization with the garbage collector.
 1. new Bytecode Instruction Link to heading When you write:
 A obj = new A(); The Java compiler compiles this to JVM bytecode like:
 new A // allocate memory, pushes uninitialized object reference onto stack dup // duplicates the reference, one for the constructor, one for the variable &#39;obj&#39; invokespecial // calls the constructor (e.g., A.&lt;init&gt;()) astore_1 // stores the object reference into local variable &#39;obj&#39; This sequence of bytecodes is then executed by either the interpreter or the Just-In-Time (JIT) compiled code.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="research">
-    <meta property="article:published_time" content="2025-07-16T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-07-16T00:00:00+00:00">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="research">
+		<meta property="article:published_time" content="2025-07-16T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-07-16T00:00:00+00:00">
 
 
 
