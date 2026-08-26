@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "coder.css",
-	"sourceRoot": "/home/adityaanand/Documents/WebPages/webpage-hugo",
+	"sourceRoot": "/Users/adityaanand/Documents/Webpages/webpage-hugo",
 	"sources": [
 		"themes/hugo-coder/assets/scss/coder.scss",
 		"themes/hugo-coder/assets/scss/css/normalize.css",
