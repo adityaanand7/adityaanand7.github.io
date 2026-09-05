@@ -10656,12 +10656,17 @@ figure {
     margin: 0; }
 
 .avatar img {
-  width: 20rem;
-  height: auto;
+  width: 180px !important;
+  height: 180px !important;
+  max-width: none !important;
+  object-fit: cover;
   border-radius: 50%; }
-  @media only screen and (max-width: 768px) {
-    .avatar img {
-      width: 10rem; } }
+
+@media (max-width: 600px) {
+  .avatar img {
+    width: 140px !important;
+    height: 140px !important; } }
+
 .list ul {
   margin: 3.2rem 0 3.2rem 0;
   list-style: none;

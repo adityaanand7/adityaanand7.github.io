@@ -1,9 +1,9 @@
-.tight-line {
-    line-height: 1.2;     /* tighter line spacing */
-    margin-bottom: 0;     /* remove bottom gap */
-  }
-  
-  .tight-line p {
-    margin: 0;            /* remove paragraph margins inside */
-  }
-  
+.thesis-announcement {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.thesis-announcement a {
+  font-weight: 600;
+}
